@@ -1,0 +1,16 @@
+node_modules/
+web/node_modules/
+web/.next/
+web/out/
+# Junctions to root assets — avoid duplicate commit
+web/public/images/
+web/public/fonts/
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+!.env.example
+.vercel
+*.tsbuildinfo
+.next/

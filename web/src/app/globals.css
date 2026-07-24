@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Godwit";
+  src: url("/fonts/GodwitThai-Regular.woff2") format("woff2"),
+       url("/fonts/GodwitThai-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Godwit";
+  src: url("/fonts/GodwitThai-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Godwit";
+  src: url("/fonts/GodwitThai-SemiBold.woff2") format("woff2"),
+       url("/fonts/GodwitThai-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Godwit";
+  src: url("/fonts/GodwitThai-Bold.woff2") format("woff2"),
+       url("/fonts/GodwitThai-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Godwit";
+  src: url("/fonts/GodwitThai-ExtraBold.woff2") format("woff2"),
+       url("/fonts/GodwitThai-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Godwit";
+  src: url("/fonts/GodwitThai-ExtraBold.woff2") format("woff2"),
+       url("/fonts/GodwitThai-ExtraBold.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #03121A;
+  --navy: #083B66;
+  --orange: #FF5E1F;
+  --muted: #F7F9FC;
+  --font-godwit: "Godwit", sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-navy: #083B66;
+  --color-orange: #FF5E1F;
+  --color-muted: #F7F9FC;
+  --font-sans: "Godwit", sans-serif;
+  --font-display: "Godwit", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Godwit", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display,
+.font-sans {
+  font-family: "Godwit", sans-serif !important;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 42s linear infinite;
+}
+
+::selection {
+  background: rgba(255, 94, 31, 0.22);
+}

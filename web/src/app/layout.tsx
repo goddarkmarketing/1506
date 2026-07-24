@@ -9,6 +9,16 @@ export const metadata: Metadata = {
   },
   description:
     "Premium Destination Management Company creating extraordinary journeys across Thailand and beyond.",
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png" }],
+    apple: [{ url: "/icon.png" }],
+  },
+  openGraph: {
+    title: "D&G Holiday Thailand",
+    description:
+      "Premium Destination Management Company creating extraordinary journeys across Thailand and beyond.",
+    images: ["/icon.png"],
+  },
 };
 
 export default function RootLayout({

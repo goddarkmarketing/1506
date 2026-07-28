@@ -58,6 +58,19 @@ export function WhoWeAre() {
               </Fade>
             ))}
           </div>
+
+          <div className="mt-8 rounded-2xl border border-[#E8D9A8] bg-gradient-to-r from-[#FFF8ED] to-[#FBF3DC] px-5 py-4 text-sm leading-relaxed text-[#3A4450]">
+            <p className="font-semibold text-[#0B2E59]">
+              D&G Holiday (Thailand) Co., Ltd.
+            </p>
+            <p className="mt-2">
+              ใบอนุญาต / Tourism Business License No.: 11/12868
+              <br />
+              Company Registration No.: 0105561154132
+              <br />
+              ATTA Member: 05614
+            </p>
+          </div>
         </Fade>
       </div>
     </section>

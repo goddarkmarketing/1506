@@ -28,18 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="th">
-      <head>
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `
-              html, body, button, input, select, textarea, a, p, h1, h2, h3, h4, h5, h6, span, div, li, label {
-                font-family: "Godwit", sans-serif !important;
-              }
-            `,
-          }}
-        />
-      </head>
-      <body className="antialiased" style={{ fontFamily: '"Godwit", sans-serif' }}>
+      <body
+        className="antialiased"
+        style={{ fontFamily: '"Better Together", "Godwit", sans-serif' }}
+      >
         {children}
         <SiteFooter />
       </body>

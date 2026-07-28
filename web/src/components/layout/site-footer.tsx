@@ -35,7 +35,7 @@ export function SiteFooter() {
             />
             <h3 className="mt-6 text-base font-black tracking-wide">ข้อมูลติดต่อ</h3>
             <p className="mt-3 text-sm leading-[1.9] text-white/90">
-              D&G Holiday Thailand Co., Ltd.
+              D&G Holiday (Thailand) Co., Ltd.
               <br />
               852/7 พฤกษาวิลล์ 60/2 ถนนหลวงแพ่ง
               <br />
@@ -73,6 +73,20 @@ export function SiteFooter() {
               >
                 dgholidaythailand
               </a>
+            </p>
+            <p className="mt-4 border-t border-white/20 pt-3 text-[12.5px] leading-[1.75] text-[#FFF5E6]/90">
+              <strong className="font-semibold text-[#FFE7A8]">
+                ใบอนุญาต / Tourism Business License No.:
+              </strong>{" "}
+              11/12868
+              <br />
+              <strong className="font-semibold text-[#FFE7A8]">
+                Company Registration No.:
+              </strong>{" "}
+              0105561154132
+              <br />
+              <strong className="font-semibold text-[#FFE7A8]">ATTA Member:</strong>{" "}
+              05614
             </p>
             <h3 className="mt-8 text-base font-black tracking-wide">ช่องทางชำระเงิน</h3>
             <div className="mt-3 flex flex-wrap gap-2">
@@ -172,18 +186,9 @@ export function SiteFooter() {
             <div className="min-w-0">
               <div className="grid gap-8 sm:grid-cols-2">
                 <div>
-                  <h3 className="text-base font-black tracking-wide">ผลิตภัณฑ์</h3>
+                  <h3 className="text-base font-black tracking-wide">TRAVEL</h3>
                   <ul className="mt-4 space-y-2.5 text-sm text-white/90">
-                    {[
-                      "จองที่พัก",
-                      "แพ็กเกจทัวร์",
-                      "รับ-ส่งสนามบิน",
-                      "รถพร้อมคนขับ",
-                      "อีเวนต์ & MICE",
-                      "ล่องเรือ",
-                      "ทัวร์ VIP",
-                      "ทัวร์ FIT",
-                    ].map((label) => (
+                    {["Tours", "Hotels", "Private Tours", "Transfers"].map((label) => (
                       <li key={label}>
                         <Link href="/services" className="hover:underline">
                           {label}
@@ -194,28 +199,21 @@ export function SiteFooter() {
                 </div>
 
                 <div>
-                  <h3 className="text-base font-black tracking-wide">บริการเสริม</h3>
+                  <h3 className="text-base font-black tracking-wide">BUSINESS</h3>
                   <ul className="mt-4 space-y-2.5 text-sm text-white/90">
-                    <li>
-                      <a
-                        href="https://www.facebook.com/dgholidaythailand"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:underline"
-                      >
-                        D&G Holiday Affiliate
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.facebook.com/dgholidaythailand"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:underline"
-                      >
-                        ชวนเพื่อน
-                      </a>
-                    </li>
+                    {[
+                      "B2B Travel Partner",
+                      "Corporate Travel",
+                      "MICE & Events",
+                      "Group Series",
+                      "DMC Thailand",
+                    ].map((label) => (
+                      <li key={label}>
+                        <Link href="/services" className="hover:underline">
+                          {label}
+                        </Link>
+                      </li>
+                    ))}
                     <li>
                       <Link href="/articles" className="hover:underline">
                         บล็อก
@@ -225,21 +223,6 @@ export function SiteFooter() {
                       <Link href="/contact" className="hover:underline">
                         ประกาศความเป็นส่วนตัว
                       </Link>
-                    </li>
-                    <li>
-                      <Link href="/contact" className="hover:underline">
-                        ข้อกำหนดและเงื่อนไข
-                      </Link>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.facebook.com/dgholidaythailand"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:underline"
-                      >
-                        ห้องข่าว D&G Holiday
-                      </a>
                     </li>
                   </ul>
                 </div>

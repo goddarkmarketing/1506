@@ -1,0 +1,12 @@
+const fs = require("fs");
+const html = fs.readFileSync("d:/1506-new/index.html", "utf8");
+const metas = [...html.matchAll(/<(?:meta|link)[^>]*(?:og:image|twitter:image|favicon|apple-touch-icon|rel=["']icon[^>]*)[^>]*>/gi)];
+console.log("matches", metas.length);
+metas.slice(0, 30).forEach((m) => console.log(m[0].slice(0, 250)));
+const headEnd = html.indexOf("</head>");
+const head = html.slice(0, Math.min(headEnd, 8000));
+const imgRefs = [...head.matchAll(/(?:og:image|twitter:image|icon|favicon)[^"']*["']([^"']+)/gi)];
+console.log("---");
+[...head.matchAll(/property=["']og:[^"']+["'][^>]*>/gi)].forEach((m) => console.log(m[0].slice(0, 200)));
+[...head.matchAll(/name=["']twitter:[^"']+["'][^>]*>/gi)].forEach((m) => console.log(m[0].slice(0, 200)));
+[...head.matchAll(/rel=["'][^"']*icon[^"']*["'][^>]*>/gi)].forEach((m) => console.log(m[0].slice(0, 200)));

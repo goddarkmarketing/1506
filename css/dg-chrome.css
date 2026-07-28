@@ -1,4 +1,6 @@
 /* Shared chrome — match homepage header + footer */
+@import "./dg-fonts.css";
+
 .dg-chrome-header {
   position: sticky;
   top: 0;
@@ -40,7 +42,7 @@
   flex: 0 0 auto;
 }
 .dg-chrome-brand__text {
-  font-family: "Godwit", sans-serif;
+  font-family: "Better Together", "Godwit", sans-serif;
   font-size: 22px;
   font-weight: 800;
   line-height: 1.1;
@@ -62,7 +64,7 @@
 }
 .dg-chrome-nav a {
   color: #F0F1F2;
-  font-family: "Godwit", sans-serif;
+  font-family: "Better Together", "Godwit", sans-serif;
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
@@ -115,7 +117,7 @@
   padding: 0 16px;
   border-radius: 999px;
   border: 3px solid transparent;
-  font-family: "Godwit", sans-serif;
+  font-family: "Better Together", "Godwit", sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 20px;
@@ -164,7 +166,7 @@
   flex: 0 0 auto;
   white-space: nowrap;
   color: #F0F1F2;
-  font-family: "Godwit", sans-serif;
+  font-family: "Better Together", "Godwit", sans-serif;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.01em;
@@ -193,7 +195,7 @@ body.dg-inner .dg-page-hero {
   background: #03121A url("../images/dg-footer-bg.png") center / cover no-repeat;
   color: #fff;
   padding: 48px 0 0;
-  font-family: "Godwit", sans-serif;
+  font-family: "Better Together", "Godwit", sans-serif;
 }
 .dg-chrome-footer__inner {
   width: min(100% - 40px, 1222px);
@@ -230,7 +232,19 @@ body.dg-inner .dg-page-hero {
   color: #FFC48A;
   text-decoration: none;
 }
-.dg-chrome-footer__contact a:hover { text-decoration: underline; }
+.dg-chrome-footer__creds {
+  margin: 14px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: rgba(255, 245, 230, 0.88);
+}
+.dg-chrome-footer__creds strong {
+  color: #FFE7A8;
+  font-weight: 700;
+}
+
 
 .dg-chrome-payments {
   display: flex;

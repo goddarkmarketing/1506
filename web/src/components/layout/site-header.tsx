@@ -6,11 +6,11 @@ import { cn } from "@/lib/utils";
 import { HOME_URL } from "@/lib/site";
 
 const nav = [
-  { href: HOME_URL, label: "หน้าแรก", external: true },
-  { href: "/services", label: "บริการ" },
-  { href: "/about", label: "เกี่ยวกับเรา" },
-  { href: "/articles", label: "บทความ" },
-  { href: "/contact", label: "ติดต่อ" },
+  { href: HOME_URL, label: "Home", external: true },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About Us" },
+  { href: "/articles", label: "Articles" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function SiteHeader({ active = "about" }: { active?: string }) {
@@ -97,10 +97,10 @@ export function SiteHeader({ active = "about" }: { active?: string }) {
               "bg-[#FFE8D1] text-[#8B3A00]"
             )}
           >
-            เข้าสู่ระบบ
+            Log In
           </span>
           <span className="inline-flex h-9 items-center rounded-full bg-[#FF7A1A] px-4 text-sm font-semibold text-white">
-            สมัครใช้งาน
+            Sign Up
           </span>
         </div>
       </div>
@@ -120,7 +120,7 @@ export function SiteHeader({ active = "about" }: { active?: string }) {
                   scrolled ? "text-[#0B2E59]" : "text-white/90"
                 )}
               >
-                บริษัท ดีแอนด์จี ฮอลิเดย์ ไทยแลนด์ จำกัด พันธมิตรด้านการท่องเที่ยวแบบ B2B ในประเทศไทย | ทัวร์กลุ่ม | ทัวร์สำหรับนักท่องเที่ยวรายบุคคล | งานอีเวนต์ | บริการขอวีซ่า
+                D&G Holiday (Thailand) Co., Ltd. — B2B travel partner in Thailand | Group Tours | FIT Tours | Events | Visa Services
               </span>
             ))}
           </div>

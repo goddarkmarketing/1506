@@ -2,15 +2,15 @@ const fs = require("fs");
 const path = require("path");
 
 const marquee =
-  "บริษัท ดีแอนด์จี ฮอลิเดย์ ไทยแลนด์ จำกัด พันธมิตรด้านการท่องเที่ยวแบบ B2B ในประเทศไทย | ทัวร์กลุ่ม | ทัวร์สำหรับนักท่องเที่ยวรายบุคคล | งานอีเวนต์ | บริการขอวีซ่า";
+  "D&G Holiday (Thailand) Co., Ltd. — B2B travel partner in Thailand | Group Tours | FIT Tours | Events | Visa Services";
 
 function header(active) {
   const nav = [
-    ["index.html", "หน้าแรก"],
-    ["services.html", "บริการ"],
-    ["about.html", "เกี่ยวกับเรา"],
-    ["articles.html", "บทความ"],
-    ["contact.html", "ติดต่อ"],
+    ["index.html", "Home"],
+    ["services.html", "Services"],
+    ["about.html", "About Us"],
+    ["articles.html", "Articles"],
+    ["contact.html", "Contact"],
   ];
   const links = nav
     .map(([href, label]) => {
@@ -26,7 +26,7 @@ function header(active) {
         <a class="dg-chrome-brand" href="index.html" aria-label="D&amp;G Holiday">
           <span class="dg-chrome-brand__text">D&amp;G Holiday</span>
         </a>
-        <nav class="dg-chrome-nav" aria-label="เมนูหลัก">
+        <nav class="dg-chrome-nav" aria-label="Main menu">
 ${links}
         </nav>
         <div class="dg-chrome-actions">
@@ -34,13 +34,13 @@ ${links}
             <img src="images/flags/th.svg" alt="" width="20" height="14" />
             <span>THB | TH</span>
           </div>
-          <span class="dg-chrome-btn dg-chrome-btn--login">เข้าสู่ระบบ</span>
-          <span class="dg-chrome-btn dg-chrome-btn--signup">สมัครใช้งาน</span>
+          <span class="dg-chrome-btn dg-chrome-btn--login">Log In</span>
+          <span class="dg-chrome-btn dg-chrome-btn--signup">Sign Up</span>
         </div>
       </div>
     </div>
     <div class="dg-chrome-marquee-wrap">
-      <div class="dg-chrome-marquee" aria-label="ข้อความบริษัท">
+      <div class="dg-chrome-marquee" aria-label="Company announcement">
         <div class="dg-chrome-marquee__track">
           <span class="dg-chrome-marquee__item">${marquee}</span>
           <span class="dg-chrome-marquee__item" aria-hidden="true">${marquee}</span>

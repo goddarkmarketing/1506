@@ -3,13 +3,13 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { ArticlesDirectory } from "@/components/articles/articles-directory";
 
 export const metadata: Metadata = {
-  title: "บทความ | Travel Journal",
+  title: "Blog & Travel Guide",
   description:
-    "คู่มือท่องเที่ยว แรงบันดาลใจ และเคล็ดลับการเดินทางจากทีม D&G Holiday Thailand",
+    "Travel inspiration, destination guides, and tips from the D&G Holiday Thailand team.",
   openGraph: {
-    title: "Travel Journal | D&G Holiday Thailand",
+    title: "Blog & Travel Guide | D&G Holiday Thailand",
     description:
-      "คู่มือท่องเที่ยว แรงบันดาลใจ และเคล็ดลับการเดินทางจากทีม D&G Holiday Thailand",
+      "Travel inspiration, destination guides, and tips from the D&G Holiday Thailand team.",
     images: ["/images/dg-phuket-sunset.png"],
   },
 };

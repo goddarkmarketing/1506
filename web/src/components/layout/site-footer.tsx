@@ -109,8 +109,8 @@ export function SiteFooter() {
               <h3 className="text-base font-black tracking-wide">เกี่ยวกับ D&G Holiday</h3>
               <ul className="mt-4 space-y-2.5 text-sm text-white/90">
                 <li>
-                  <Link href="/services" className="hover:underline">
-                    วิธีจองทัวร์
+                  <Link href="/travel-services" className="hover:underline">
+                    Travel Services
                   </Link>
                 </li>
                 <li>
@@ -119,8 +119,8 @@ export function SiteFooter() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="hover:underline">
-                    สอบถามบริการ
+                  <Link href="/proposal" className="hover:underline">
+                    Request a Proposal
                   </Link>
                 </li>
                 <li>
@@ -184,44 +184,85 @@ export function SiteFooter() {
             </div>
 
             <div className="min-w-0">
-              <div className="grid gap-8 sm:grid-cols-2">
+              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 <div>
-                  <h3 className="text-base font-black tracking-wide">TRAVEL</h3>
+                  <h3 className="text-base font-black tracking-wide">EXPLORE</h3>
                   <ul className="mt-4 space-y-2.5 text-sm text-white/90">
-                    {["Tours", "Hotels", "Private Tours", "Transfers"].map((label) => (
-                      <li key={label}>
-                        <Link href="/services" className="hover:underline">
-                          {label}
-                        </Link>
-                      </li>
-                    ))}
+                    <li>
+                      <Link href="/about" className="hover:underline">
+                        About Us
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/travel-services" className="hover:underline">
+                        Travel Services
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/destinations" className="hover:underline">
+                        Destinations
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/gallery" className="hover:underline">
+                        Gallery
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/articles" className="hover:underline">
+                        Blog & Travel Guide
+                      </Link>
+                    </li>
                   </ul>
                 </div>
 
                 <div>
                   <h3 className="text-base font-black tracking-wide">BUSINESS</h3>
                   <ul className="mt-4 space-y-2.5 text-sm text-white/90">
-                    {[
-                      "B2B Travel Partner",
-                      "Corporate Travel",
-                      "MICE & Events",
-                      "Group Series",
-                      "DMC Thailand",
-                    ].map((label) => (
-                      <li key={label}>
-                        <Link href="/services" className="hover:underline">
-                          {label}
-                        </Link>
-                      </li>
-                    ))}
                     <li>
-                      <Link href="/articles" className="hover:underline">
-                        บล็อก
+                      <Link href="/mice" className="hover:underline">
+                        MICE & Events
                       </Link>
                     </li>
                     <li>
+                      <Link href="/events" className="hover:underline">
+                        Event Management
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/india-market" className="hover:underline">
+                        India Market
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/destination-weddings" className="hover:underline">
+                        Weddings
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/proposal" className="hover:underline">
+                        Request a Proposal
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="text-base font-black tracking-wide">SUPPORT</h3>
+                  <ul className="mt-4 space-y-2.5 text-sm text-white/90">
+                    <li>
                       <Link href="/contact" className="hover:underline">
-                        ประกาศความเป็นส่วนตัว
+                        Contact Us
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/about/partners-certifications" className="hover:underline">
+                        Partners & Certifications
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/travel-services/visa-travel-support" className="hover:underline">
+                        Visa & Travel Support
                       </Link>
                     </li>
                   </ul>

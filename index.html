@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html><html style="height:100%" lang="th-th"><head>
+<!DOCTYPE html><html style="height:100%" lang="th-th"><head>
 <link rel="stylesheet" href="css/dg-fonts.css?v=chonburi1" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -453,11 +453,11 @@ input::-webkit-inner-spin-button,input::-webkit-outer-spin-button,input::-webkit
 </style>
 <style id="dg-stable-fixes">
 /* In-page menu anchors clear sticky header */
-.dg-anchor, #merchandising, #dg-about, #dg-contact, #dg-articles, #dg-destinations, #dg-why, #dg-b2b, #dg-biz-services, #dg-partner-inquiry, #dg-story, #dg-cta-bar {
+.dg-anchor, #merchandising, #dg-about, #dg-contact, #dg-articles, #dg-destinations, #dg-why, #dg-b2b, #dg-biz-services, #dg-partner-inquiry, #dg-story, #dg-cta-bar, #dg-gate-services, #dg-gate-regions, #dg-gate-mice, #dg-gate-trust, #dg-gate-spotlight, #dg-gate-gallery {
   scroll-margin-top: 120px;
 }
 
-/* Sticky header: visible + transparent over hero, white on scroll */
+/* Sticky header: solid white at all times (no transparent over hero) */
 .r-bztko3.r-ipm5af.r-fgfhv {
   z-index: 1000 !important;
   min-height: var(--dg-header-h, 72px) !important;
@@ -466,7 +466,8 @@ input::-webkit-inner-spin-button,input::-webkit-outer-spin-button,input::-webkit
   left: 0 !important;
   right: 0 !important;
   overflow: visible !important;
-  background: transparent !important;
+  background: #ffffff !important;
+  box-shadow: 0 1px 0 rgba(3,18,26,0.08), 0 4px 16px rgba(3,18,26,0.06);
   transition: background-color .2s ease, box-shadow .2s ease;
   isolation: isolate;
 }
@@ -483,8 +484,8 @@ input::-webkit-inner-spin-button,input::-webkit-outer-spin-button,input::-webkit
   left: 0 !important;
   right: 0 !important;
   top: auto !important;
-  background-color: transparent !important;
-  background-image: linear-gradient(180deg, rgba(3,18,26,0.28) 0%, rgba(3,18,26,0) 100%) !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
   overflow: visible !important;
 }
 .r-bztko3 .r-adacv {
@@ -497,7 +498,7 @@ input::-webkit-inner-spin-button,input::-webkit-outer-spin-button,input::-webkit
   left: 0 !important;
   right: 0 !important;
   top: auto !important;
-  background: transparent !important;
+  background: #ffffff !important;
   overflow: visible !important;
 }
 .r-bztko3 .r-qklmqi,
@@ -510,7 +511,7 @@ input::-webkit-inner-spin-button,input::-webkit-outer-spin-button,input::-webkit
   width: 100% !important;
   align-items: center !important;
   justify-content: center !important;
-  background: transparent !important;
+  background: #ffffff !important;
 }
 .r-bztko3 [data-testid="product-nav"] > .r-18u37iz {
   display: flex !important;
@@ -534,16 +535,16 @@ input::-webkit-inner-spin-button,input::-webkit-outer-spin-button,input::-webkit
   white-space: nowrap;
 }
 .r-bztko3 [data-testid="product-nav"] a .css-901oao {
-  color: #ffffff !important;
+  color: #03121A !important;
   font-size: 14px !important;
   font-weight: 600 !important;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.35);
+  text-shadow: none !important;
 }
-/* Only the main hero section sits under transparent header — NOT search fields (they also use r-tqpus0) */
+/* Hero sits below solid white header (no transparent overlay) */
 #__next > .css-1dbjc4n.r-13awgt0 > .r-tqpus0,
 #navbar-offset + .r-tqpus0,
 .css-1dbjc4n.r-6koalj.r-1wtj0ep.r-bnwqim.r-13qz1uu.r-tqpus0 {
-  margin-top: calc(-1 * var(--dg-header-stack, 108px)) !important;
+  margin-top: 0 !important;
   position: relative;
   z-index: 30 !important;
   overflow: visible !important;
@@ -563,6 +564,16 @@ input::-webkit-inner-spin-button,input::-webkit-outer-spin-button,input::-webkit
 [data-testid="search-submit-button"] {
   margin-top: 0 !important;
 }
+.r-bztko3 [style*="color:rgba(240,241,242"],
+.r-bztko3 [style*="color: rgba(240,241,242"],
+.r-bztko3.dg-header-scrolled [style*="color:rgba(240,241,242"],
+.r-bztko3.dg-header-scrolled [style*="color: rgba(240,241,242"],
+.r-bztko3.dg-header-scrolled [data-testid="product-nav"] a .css-901oao {
+  color: #03121A !important;
+  text-shadow: none !important;
+}
+.r-bztko3 .dg-lucide,
+.r-bztko3.dg-header-scrolled .dg-lucide { color: #03121A !important; }
 .r-bztko3.dg-header-scrolled {
   background: #ffffff !important;
   box-shadow: 0 1px 0 rgba(3,18,26,0.08), 0 4px 16px rgba(3,18,26,0.06);
@@ -574,13 +585,6 @@ input::-webkit-inner-spin-button,input::-webkit-outer-spin-button,input::-webkit
   background-image: none !important;
   background-color: #ffffff !important;
 }
-.r-bztko3.dg-header-scrolled [style*="color:rgba(240,241,242"],
-.r-bztko3.dg-header-scrolled [style*="color: rgba(240,241,242"],
-.r-bztko3.dg-header-scrolled [data-testid="product-nav"] a .css-901oao {
-  color: #03121A !important;
-  text-shadow: none !important;
-}
-.r-bztko3.dg-header-scrolled .dg-lucide { color: #03121A !important; }
 .r-bztko3 a, .r-bztko3 .css-901oao { position: relative; z-index: 1; }
 
 
@@ -760,7 +764,7 @@ input::-webkit-inner-spin-button,input::-webkit-outer-spin-button,input::-webkit
   min-width: 0;
 }
 .dg-top-menu__link {
-  color: #F0F1F2 !important;
+  color: #03121A !important;
   font-family: "Better Together", "Godwit", sans-serif !important;
   font-size: 14px !important;
   font-weight: 600 !important;
@@ -772,8 +776,8 @@ input::-webkit-inner-spin-button,input::-webkit-outer-spin-button,input::-webkit
   transition: background .15s ease, color .15s ease;
 }
 .dg-top-menu__link:hover {
-  background: rgba(255,255,255,0.12);
-  color: #fff !important;
+  background: rgba(3,18,26,0.06);
+  color: #03121A !important;
 }
 .r-bztko3.dg-header-scrolled .dg-top-menu__link {
   color: #03121A !important;
@@ -782,18 +786,18 @@ input::-webkit-inner-spin-button,input::-webkit-outer-spin-button,input::-webkit
   background: rgba(3,18,26,0.06);
 }
 
-/* Keep top bar as one row: logo | menu | actions — same rail as page content */
+/* Keep top bar as one row: logo | menu | actions — wide rail for mega menu */
 .r-bztko3 .r-18u37iz.r-1wtj0ep.r-xd6kpl {
   display: flex !important;
   align-items: center !important;
-  width: 1222px !important;
+  width: min(1280px, calc(100% - 32px)) !important;
   max-width: 100% !important;
   margin-left: auto !important;
   margin-right: auto !important;
   padding-top: 10px !important;
   padding-bottom: 10px !important;
-  padding-left: 14px !important;
-  padding-right: 14px !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
   box-sizing: border-box !important;
   overflow: visible !important;
   min-height: 72px !important;
@@ -822,15 +826,15 @@ input::-webkit-inner-spin-button,input::-webkit-outer-spin-button,input::-webkit
   justify-content: center !important;
 }
 .dg-marquee {
-  width: 1222px;
+  width: min(1280px, calc(100% - 32px));
   max-width: 100%;
   margin: 0 auto;
   height: 36px;
   overflow: hidden;
   display: flex;
   align-items: center;
-  padding-left: 14px;
-  padding-right: 14px;
+  padding-left: 16px;
+  padding-right: 16px;
   box-sizing: border-box;
   mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
@@ -845,8 +849,8 @@ input::-webkit-inner-spin-button,input::-webkit-outer-spin-button,input::-webkit
 .dg-marquee__item {
   flex: 0 0 auto;
   white-space: nowrap;
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
+  color: #03121A !important;
+  -webkit-text-fill-color: #03121A !important;
   font-family: "Better Together", "Godwit", sans-serif;
   font-size: 13px;
   font-weight: 500;
@@ -872,7 +876,7 @@ input::-webkit-inner-spin-button,input::-webkit-outer-spin-button,input::-webkit
   .dg-top-menu__link { padding: 6px 8px !important; font-size: 13px !important; }
   .r-bztko3 .r-18u37iz.r-1wtj0ep.r-xd6kpl {
     width: 100% !important;
-    max-width: 1222px !important;
+    max-width: none !important;
   }
   .dg-marquee__item { font-size: 12px; }
 }
@@ -1199,7 +1203,8 @@ input::-webkit-inner-spin-button,input::-webkit-outer-spin-button,input::-webkit
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  margin-left: 8px !important;
+  margin-left: 0 !important;
+  margin-right: 8px !important;
   line-height: 0 !important;
   position: relative !important;
   z-index: 2 !important;
@@ -1220,6 +1225,31 @@ input::-webkit-inner-spin-button,input::-webkit-outer-spin-button,input::-webkit
 .r-bztko3 .r-1awozwy.r-18u37iz.r-1777fci {
   align-items: center !important;
 }
+
+/* Log In auth icon — always visible on gold pill */
+.r-bztko3 .dg-login-icon-wrap {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-left: 0 !important;
+  margin-right: 8px !important;
+  line-height: 0 !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+.r-bztko3 .dg-login-icon-wrap .dg-login-icon,
+.r-bztko3 .dg-login-icon-wrap .dg-lucide,
+.r-bztko3 [style*="background-color:rgba(255,232,209"] .dg-login-icon {
+  width: 18px !important;
+  height: 18px !important;
+  display: block !important;
+  color: #03121A !important;
+  stroke: #03121A !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 /* Login button icon on gold gradient */
 .r-bztko3 [style*="background-color:rgba(255,232,209"] .r-13hce6t > .dg-lucide,
 .r-bztko3 [style*="background-color:rgba(255,232,209"] .dg-lucide {
@@ -2427,6 +2457,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function paint() {
     if (window.lucide && typeof lucide.createIcons === "function") {
       lucide.createIcons({
+        icons: lucide.icons,
         attrs: {
           "stroke-width": 2,
           "stroke-linecap": "round",
@@ -2607,7 +2638,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     if (window.lucide && lucide.createIcons) {
-      try { lucide.createIcons(); } catch (e) {}
+      try { lucide.createIcons({ icons: lucide.icons }); } catch (e) {}
     }
 
     goTo(0, false);
@@ -2618,7 +2649,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setTimeout(init, 300);
   setTimeout(function () {
     if (window.lucide && lucide.createIcons) {
-      try { lucide.createIcons(); } catch (e) {}
+      try { lucide.createIcons({ icons: lucide.icons }); } catch (e) {}
     }
   }, 600);
 })();
@@ -2668,7 +2699,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
     if (window.lucide && typeof lucide.createIcons === "function") {
-      lucide.createIcons();
+      lucide.createIcons({ icons: lucide.icons });
     }
   });
 })();
@@ -2685,8 +2716,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var tour = document.getElementById("dg-tour-overlap");
     if (!header) return;
     function sync() {
-      var on = window.scrollY > 24;
-      header.classList.toggle("dg-header-scrolled", on);
+      header.classList.add("dg-header-scrolled");
       if (tour) {
         var hr = header.getBoundingClientRect();
         var tr = tour.getBoundingClientRect();
@@ -2848,7 +2878,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setFeatured();
     startAuto();
     if (window.lucide && typeof lucide.createIcons === "function") {
-      lucide.createIcons();
+      lucide.createIcons({ icons: lucide.icons });
     }
   });
 })();
@@ -3461,7 +3491,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     if (window.lucide && lucide.createIcons) {
-      try { lucide.createIcons(); } catch (e) {}
+      try { lucide.createIcons({ icons: lucide.icons }); } catch (e) {}
     }
   }
 
@@ -3568,13 +3598,103 @@ document.addEventListener("DOMContentLoaded", function () {
 /* Hide absolute product shortcut row if it escapes hero (common Traveloka pattern) */
 .r-1d2f490.r-u8s1d.r-ipm5af {
   max-height: 100%;
-}</style><link rel="stylesheet" href="css/dg-chrome.css" /><link rel="stylesheet" href="css/dg-home-edits.css?v=band73" /><link rel="stylesheet" href="css/dg-destinations.css?v=32" /></head><body><div id="__next"><div class="css-1dbjc4n r-13awgt0"><span></span><div class="css-1dbjc4n r-bztko3 r-ipm5af r-fgfhv r-13qz1uu r-8ny0jo" style="position:sticky"><div class="css-1dbjc4n r-1awozwy r-1777fci r-u8s1d r-ipm5af r-13qz1uu"><div class="css-1dbjc4n r-82yag"></div></div><div class="css-1dbjc4n r-wy61xf r-1jgb5lz r-r0h9e2 r-u8s1d r-13qz1uu r-184en5c" style="background-image:linear-gradient(3.141592653589793rad,rgba(3, 18, 26, 0.325) 50%,rgba(3, 18, 26, 0) 100%)"><div class="css-1dbjc4n r-1awozwy r-1777fci r-adacv r-82yag r-u8s1d r-fgfhv r-13qz1uu r-184en5c" style="background-color:rgba(0,0,0,0.00)"><div class="css-1dbjc4n r-18u37iz r-1wtj0ep r-xd6kpl r-1e081e0 r-95jzfe r-17yavnb r-184en5c"><div class="css-1dbjc4n r-1awozwy r-18u37iz"><a href="index.html" class="css-4rbku5 dg-brand-link" aria-label="D&amp;G Holiday"><span class="dg-brand-logo dg-brand-logo--header"><img class="dg-brand-logo__img" src="images/dg-logo.png?v=10" alt="D&amp;G Holiday (Thailand) Co., Ltd." width="180" height="48" decoding="async" /><span class="dg-brand-logo__text">D&amp;G Holiday</span></span></a></div><nav class="dg-top-menu" aria-label="Main menu">
-  <a href="index.html" class="dg-top-menu__link">Home</a>
-  <a href="http://localhost:3000/services" class="dg-top-menu__link">Services</a>
-  <a href="http://localhost:3000/about" class="dg-top-menu__link">About Us</a>
-  <a href="http://localhost:3000/articles" class="dg-top-menu__link">Articles</a>
-  <a href="http://localhost:3000/contact" class="dg-top-menu__link">Contact</a>
-</nav><div class="css-1dbjc4n r-1awozwy r-18u37iz"><div class="css-1dbjc4n r-1awozwy r-18u37iz" data-testid="quick-links"><div class="css-1dbjc4n"><div data-testid="language-currency-dropdown" style="cursor:pointer"><div class="css-1dbjc4n r-1awozwy r-1f0042m r-18u37iz r-9aw3ui r-1r8g8re r-tuq35u r-1e081e0 r-lrvibr" data-testid="language-currency-header"><div class="css-1dbjc4n dg-lang-flag-wrap"><img class="dg-flag dg-flag--header" src="images/flags/th.svg" alt="" width="20" height="14" /></div><div dir="auto" class="css-901oao r-1w9mtv9 r-fdjqy7" style="color:rgba(240,241,242,1.00);font-family:"Better Together","Godwit",sans-serif;font-size:16px;font-weight:600;line-height:20px"="">THB<!-- --> | <!-- -->TH</div><i data-lucide="chevron-down" class="dg-lucide" aria-hidden="true"></i></div></div><div class="css-1dbjc4n r-18u37iz r-633pao r-u8s1d r-j76wpu" style="left:-50%;margin-top:4px;-webkit-transform:translateX(-20%);transform:translateX(-20%)"><div class="css-1dbjc4n r-kdyh1x r-b4qz5r r-1udh08x r-4k2abt r-1ep47lj r-1clhhh9 r-1ftll1t" style="background-color:rgba(255,255,255,1.00);max-height:75vh;-webkit-transform:scaleY(0);transform:scaleY(0);visibility:hidden;width:auto"><div class="css-1dbjc4n r-4k2abt r-1ep47lj r-1clhhh9 r-1ftll1t" style="opacity:0;-webkit-transform:translateY(16px);transform:translateY(16px)"></div></div></div></div><div class="css-1dbjc4n r-kdyh1x r-1e081e0 r-5njf8e"><a href="/th-th/retrieve" class="css-4rbku5 r-1awozwy r-6koalj r-1q142lx"><div dir="auto" class="css-901oao r-1w9mtv9 r-fdjqy7" style="color:rgba(240,241,242,1.00);font-family:"Better Together","Godwit",sans-serif;font-size:16px;font-weight:600;line-height:20px"="">My Tours</div></a></div></div><div class="css-1dbjc4n r-1awozwy r-18u37iz r-9aw3ui r-1wtj0ep r-1wyyakw"><div role="button" tabindex="0" class="css-18t94o4 css-1dbjc4n r-1loqt21 r-1ny4l3l r-1otgn73" style="width:fit-content"><div class="css-1dbjc4n r-1awozwy r-18u37iz r-1777fci" style="background-color:rgba(255,232,209,1.00);border-top-color:rgba(0,0,0,0.00);border-right-color:rgba(0,0,0,0.00);border-bottom-color:rgba(0,0,0,0.00);border-left-color:rgba(0,0,0,0.00);border-top-left-radius:999px;border-top-right-radius:999px;border-bottom-right-radius:999px;border-bottom-left-radius:999px;border-top-width:3px;border-right-width:3px;border-bottom-width:3px;border-left-width:3px;height:36px;padding-right:16px;padding-left:16px"><div dir="auto" class="css-901oao css-bfa6kz r-1w9mtv9 r-1777fci r-fdjqy7 r-lrvibr" style="color:rgba(139,58,0,1.00);font-family:"Better Together","Godwit",sans-serif;font-size:16px;font-weight:600;line-height:20px"="">Log In</div><div class="css-1dbjc4n r-13hce6t"><i data-lucide="log-in" class="dg-lucide" aria-hidden="true"></i></div></div><div class="css-1dbjc4n r-u8s1d" style="border-top-color:rgba(0,0,0,0.00);border-right-color:rgba(0,0,0,0.00);border-bottom-color:rgba(0,0,0,0.00);border-left-color:rgba(0,0,0,0.00);border-top-left-radius:999px;border-top-right-radius:999px;border-bottom-right-radius:999px;border-bottom-left-radius:999px;border-top-width:2px;border-right-width:2px;border-bottom-width:2px;border-left-width:2px;height:4px;left:-2px;min-width:4px;top:-2px;z-index:-10"></div></div><div role="button" tabindex="0" class="css-18t94o4 css-1dbjc4n r-1loqt21 r-1ny4l3l r-1otgn73" style="width:fit-content"><div class="css-1dbjc4n r-1awozwy r-18u37iz r-1777fci" style="background-color:rgba(255,94,31,1.00);border-top-color:rgba(0,0,0,0.00);border-right-color:rgba(0,0,0,0.00);border-bottom-color:rgba(0,0,0,0.00);border-left-color:rgba(0,0,0,0.00);border-top-left-radius:999px;border-top-right-radius:999px;border-bottom-right-radius:999px;border-bottom-left-radius:999px;border-top-width:3px;border-right-width:3px;border-bottom-width:3px;border-left-width:3px;height:36px;padding-right:16px;padding-left:16px"><div dir="auto" class="css-901oao css-bfa6kz r-1w9mtv9 r-1777fci r-fdjqy7 r-lrvibr" style="color:rgba(255,255,255,1.00);font-family:"Better Together","Godwit",sans-serif;font-size:16px;font-weight:600;line-height:20px"="">Sign Up</div></div><div class="css-1dbjc4n r-u8s1d" style="border-top-color:rgba(0,0,0,0.00);border-right-color:rgba(0,0,0,0.00);border-bottom-color:rgba(0,0,0,0.00);border-left-color:rgba(0,0,0,0.00);border-top-left-radius:999px;border-top-right-radius:999px;border-bottom-right-radius:999px;border-bottom-left-radius:999px;border-top-width:2px;border-right-width:2px;border-bottom-width:2px;border-left-width:2px;height:4px;left:-2px;min-width:4px;top:-2px;z-index:-10"></div></div></div></div></div><div class="css-1dbjc4n r-qklmqi r-1dppl8s r-5kkj8d r-13qz1uu"><div class="css-1dbjc4n r-1awozwy r-6koalj r-1ugchlj r-13qz1uu" data-testid="product-nav"><div class="dg-marquee" aria-label="Company announcement">
+}</style><link rel="stylesheet" href="css/dg-chrome.css" /><link rel="stylesheet" href="css/dg-home-edits.css?v=band77" /><link rel="stylesheet" href="css/dg-home-gateways.css?v=2" /><link rel="stylesheet" href="css/dg-ia-pages.css?v=13" /><link rel="stylesheet" href="css/dg-mega-menu.css?v=2" /><link rel="stylesheet" href="css/dg-destinations.css?v=32" /></head><body><div id="__next"><div class="css-1dbjc4n r-13awgt0"><span></span><div class="css-1dbjc4n r-bztko3 r-ipm5af r-fgfhv r-13qz1uu r-8ny0jo" style="position:sticky"><div class="css-1dbjc4n r-1awozwy r-1777fci r-u8s1d r-ipm5af r-13qz1uu"><div class="css-1dbjc4n r-82yag"></div></div><div class="css-1dbjc4n r-wy61xf r-1jgb5lz r-r0h9e2 r-u8s1d r-13qz1uu r-184en5c" style="background-image:linear-gradient(3.141592653589793rad,rgba(3, 18, 26, 0.325) 50%,rgba(3, 18, 26, 0) 100%)"><div class="css-1dbjc4n r-1awozwy r-1777fci r-adacv r-82yag r-u8s1d r-fgfhv r-13qz1uu r-184en5c" style="background-color:rgba(0,0,0,0.00)"><div class="css-1dbjc4n r-18u37iz r-1wtj0ep r-xd6kpl r-1e081e0 r-95jzfe r-17yavnb r-184en5c"><div class="css-1dbjc4n r-1awozwy r-18u37iz"><a href="index.html" class="css-4rbku5 dg-brand-link" aria-label="D&amp;G Holiday"><span class="dg-brand-logo dg-brand-logo--header"><img class="dg-brand-logo__img" src="images/dg-logo.png?v=10" alt="D&amp;G Holiday (Thailand) Co., Ltd." width="180" height="48" decoding="async" /><span class="dg-brand-logo__text">D&amp;G Holiday</span></span></a></div><nav class="dg-mega dg-top-menu" aria-label="Primary">
+<button type="button" class="dg-mega__toggle" aria-expanded="false" aria-controls="dg-mega-drawer">Menu</button>
+<div class="dg-mega__desktop dg-top-menu__desktop"><a class="dg-mega__link" href="index.html">Home</a>
+<div class="dg-mega__item">
+  <a class="dg-mega__link" href="about/">About Us <span class="dg-mega__caret" aria-hidden="true">▾</span></a>
+  <div class="dg-mega__panel dg-mega__panel--sm">
+    <div class="dg-mega__panel-card">
+      <a class="dg-mega__panel-all" href="about/">View all About Us</a>
+      <ul><li><a href="about/company-profile/">Company Profile</a></li><li><a href="about/vision-mission/">Our Vision &amp; Mission</a></li><li><a href="about/why-choose/">Why Choose D&amp;G Holiday</a></li><li><a href="about/our-team/">Our Team</a></li><li><a href="about/partners-certifications/">Partners &amp; Certifications</a></li><li><a href="gallery/">Gallery</a></li></ul>
+    </div>
+  </div>
+</div>
+<div class="dg-mega__item">
+  <a class="dg-mega__link" href="travel-services/">Travel Services <span class="dg-mega__caret" aria-hidden="true">▾</span></a>
+  <div class="dg-mega__panel dg-mega__panel--lg">
+    <div class="dg-mega__panel-card">
+      <a class="dg-mega__panel-all" href="travel-services/">View all Travel Services</a>
+      <ul><li><a href="travel-services/inbound-travel/">Inbound Travel</a></li><li><a href="travel-services/outbound-travel/">Outbound Travel</a></li><li><a href="travel-services/domestic-travel/">Domestic Travel</a></li><li><a href="travel-services/group-tours/">Group Tours</a></li><li><a href="travel-services/private-tours/">Private Tours</a></li><li><a href="travel-services/luxury-travel/">Luxury Travel</a></li><li><a href="travel-services/hotel-reservations/">Hotel Reservations</a></li><li><a href="travel-services/transportation-transfers/">Transportation &amp; Transfers</a></li><li><a href="travel-services/visa-travel-support/">Visa &amp; Travel Support</a></li><li><a href="india-market/">India Market (Overview)</a></li><li><a href="india-market/indian-group-tours/">Indian Group Tours</a></li><li><a href="india-market/indian-corporate-groups/">Indian Corporate Groups</a></li><li><a href="india-market/indian-incentive-travel/">Indian Incentive Travel</a></li><li><a href="india-market/indian-wedding-services/">Indian Wedding Services</a></li><li><a href="india-market/indian-catering/">Indian Catering</a></li><li><a href="india-market/hindi-speaking-support/">Hindi-speaking Support</a></li></ul>
+    </div>
+  </div>
+</div>
+<div class="dg-mega__item">
+  <a class="dg-mega__link" href="mice/">MICE &amp; Events <span class="dg-mega__caret" aria-hidden="true">▾</span></a>
+  <div class="dg-mega__panel dg-mega__panel--lg">
+    <div class="dg-mega__panel-card">
+      <a class="dg-mega__panel-all" href="mice/">View all MICE &amp; Events</a>
+      <ul><li><a href="mice/meetings/">Meetings</a></li><li><a href="mice/incentive-travel/">Incentive Travel</a></li><li><a href="mice/seminars-conferences/">Seminars &amp; Conferences</a></li><li><a href="mice/corporate-group-travel/">Corporate Group Travel</a></li><li><a href="mice/team-building/">Team Building</a></li><li><a href="mice/exhibitions/">Exhibitions</a></li><li><a href="mice/corporate-retreats/">Corporate Retreats</a></li><li><a href="events/">Event Management (Overview)</a></li><li><a href="events/gala-dinner/">Gala Dinner</a></li><li><a href="events/award-ceremonies/">Award Ceremonies</a></li><li><a href="events/annual-company-parties/">Annual Company Parties</a></li><li><a href="events/product-launches/">Product Launches</a></li><li><a href="events/themed-events/">Themed Events</a></li><li><a href="events/private-parties/">Private Parties</a></li><li><a href="events/entertainment-production/">Entertainment &amp; Production</a></li></ul>
+    </div>
+  </div>
+</div>
+<div class="dg-mega__item">
+  <a class="dg-mega__link" href="destination-weddings/">Weddings <span class="dg-mega__caret" aria-hidden="true">▾</span></a>
+  <div class="dg-mega__panel dg-mega__panel--sm">
+    <div class="dg-mega__panel-card">
+      <a class="dg-mega__panel-all" href="destination-weddings/">View all Weddings</a>
+      <ul><li><a href="destination-weddings/indian-weddings/">Indian Weddings</a></li><li><a href="destination-weddings/thai-weddings/">Thai Weddings</a></li><li><a href="destination-weddings/luxury-weddings/">Luxury Weddings</a></li><li><a href="destination-weddings/beach-weddings/">Beach Weddings</a></li><li><a href="destination-weddings/wedding-venues/">Wedding Venues</a></li><li><a href="destination-weddings/wedding-planning-services/">Wedding Planning Services</a></li></ul>
+    </div>
+  </div>
+</div>
+<div class="dg-mega__item">
+  <a class="dg-mega__link" href="destinations/">Destinations <span class="dg-mega__caret" aria-hidden="true">▾</span></a>
+  <div class="dg-mega__panel dg-mega__panel--sm">
+    <div class="dg-mega__panel-card">
+      <a class="dg-mega__panel-all" href="destinations/">View all Destinations</a>
+      <ul><li><a href="destinations/thailand/">Thailand</a></li><li><a href="destinations/asia/">Asia</a></li><li><a href="destinations/europe/">Europe</a></li><li><a href="destinations/middle-east/">Middle East</a></li><li><a href="destinations/worldwide/">Worldwide</a></li></ul>
+    </div>
+  </div>
+</div>
+<a class="dg-mega__link" href="articles/">Blog</a></div>
+<div class="dg-mega__drawer" id="dg-mega-drawer" hidden><a class="dg-mega__link" href="index.html">Home</a>
+<div class="dg-mega__item">
+  <a class="dg-mega__link" href="about/">About Us <span class="dg-mega__caret" aria-hidden="true">▾</span></a>
+  <div class="dg-mega__panel dg-mega__panel--sm">
+    <div class="dg-mega__panel-card">
+      <a class="dg-mega__panel-all" href="about/">View all About Us</a>
+      <ul><li><a href="about/company-profile/">Company Profile</a></li><li><a href="about/vision-mission/">Our Vision &amp; Mission</a></li><li><a href="about/why-choose/">Why Choose D&amp;G Holiday</a></li><li><a href="about/our-team/">Our Team</a></li><li><a href="about/partners-certifications/">Partners &amp; Certifications</a></li><li><a href="gallery/">Gallery</a></li></ul>
+    </div>
+  </div>
+</div>
+<div class="dg-mega__item">
+  <a class="dg-mega__link" href="travel-services/">Travel Services <span class="dg-mega__caret" aria-hidden="true">▾</span></a>
+  <div class="dg-mega__panel dg-mega__panel--lg">
+    <div class="dg-mega__panel-card">
+      <a class="dg-mega__panel-all" href="travel-services/">View all Travel Services</a>
+      <ul><li><a href="travel-services/inbound-travel/">Inbound Travel</a></li><li><a href="travel-services/outbound-travel/">Outbound Travel</a></li><li><a href="travel-services/domestic-travel/">Domestic Travel</a></li><li><a href="travel-services/group-tours/">Group Tours</a></li><li><a href="travel-services/private-tours/">Private Tours</a></li><li><a href="travel-services/luxury-travel/">Luxury Travel</a></li><li><a href="travel-services/hotel-reservations/">Hotel Reservations</a></li><li><a href="travel-services/transportation-transfers/">Transportation &amp; Transfers</a></li><li><a href="travel-services/visa-travel-support/">Visa &amp; Travel Support</a></li><li><a href="india-market/">India Market (Overview)</a></li><li><a href="india-market/indian-group-tours/">Indian Group Tours</a></li><li><a href="india-market/indian-corporate-groups/">Indian Corporate Groups</a></li><li><a href="india-market/indian-incentive-travel/">Indian Incentive Travel</a></li><li><a href="india-market/indian-wedding-services/">Indian Wedding Services</a></li><li><a href="india-market/indian-catering/">Indian Catering</a></li><li><a href="india-market/hindi-speaking-support/">Hindi-speaking Support</a></li></ul>
+    </div>
+  </div>
+</div>
+<div class="dg-mega__item">
+  <a class="dg-mega__link" href="mice/">MICE &amp; Events <span class="dg-mega__caret" aria-hidden="true">▾</span></a>
+  <div class="dg-mega__panel dg-mega__panel--lg">
+    <div class="dg-mega__panel-card">
+      <a class="dg-mega__panel-all" href="mice/">View all MICE &amp; Events</a>
+      <ul><li><a href="mice/meetings/">Meetings</a></li><li><a href="mice/incentive-travel/">Incentive Travel</a></li><li><a href="mice/seminars-conferences/">Seminars &amp; Conferences</a></li><li><a href="mice/corporate-group-travel/">Corporate Group Travel</a></li><li><a href="mice/team-building/">Team Building</a></li><li><a href="mice/exhibitions/">Exhibitions</a></li><li><a href="mice/corporate-retreats/">Corporate Retreats</a></li><li><a href="events/">Event Management (Overview)</a></li><li><a href="events/gala-dinner/">Gala Dinner</a></li><li><a href="events/award-ceremonies/">Award Ceremonies</a></li><li><a href="events/annual-company-parties/">Annual Company Parties</a></li><li><a href="events/product-launches/">Product Launches</a></li><li><a href="events/themed-events/">Themed Events</a></li><li><a href="events/private-parties/">Private Parties</a></li><li><a href="events/entertainment-production/">Entertainment &amp; Production</a></li></ul>
+    </div>
+  </div>
+</div>
+<div class="dg-mega__item">
+  <a class="dg-mega__link" href="destination-weddings/">Weddings <span class="dg-mega__caret" aria-hidden="true">▾</span></a>
+  <div class="dg-mega__panel dg-mega__panel--sm">
+    <div class="dg-mega__panel-card">
+      <a class="dg-mega__panel-all" href="destination-weddings/">View all Weddings</a>
+      <ul><li><a href="destination-weddings/indian-weddings/">Indian Weddings</a></li><li><a href="destination-weddings/thai-weddings/">Thai Weddings</a></li><li><a href="destination-weddings/luxury-weddings/">Luxury Weddings</a></li><li><a href="destination-weddings/beach-weddings/">Beach Weddings</a></li><li><a href="destination-weddings/wedding-venues/">Wedding Venues</a></li><li><a href="destination-weddings/wedding-planning-services/">Wedding Planning Services</a></li></ul>
+    </div>
+  </div>
+</div>
+<div class="dg-mega__item">
+  <a class="dg-mega__link" href="destinations/">Destinations <span class="dg-mega__caret" aria-hidden="true">▾</span></a>
+  <div class="dg-mega__panel dg-mega__panel--sm">
+    <div class="dg-mega__panel-card">
+      <a class="dg-mega__panel-all" href="destinations/">View all Destinations</a>
+      <ul><li><a href="destinations/thailand/">Thailand</a></li><li><a href="destinations/asia/">Asia</a></li><li><a href="destinations/europe/">Europe</a></li><li><a href="destinations/middle-east/">Middle East</a></li><li><a href="destinations/worldwide/">Worldwide</a></li></ul>
+    </div>
+  </div>
+</div>
+<a class="dg-mega__link" href="articles/">Blog</a></div>
+</nav><div class="css-1dbjc4n r-1awozwy r-18u37iz"><div class="css-1dbjc4n r-1awozwy r-18u37iz" data-testid="quick-links"><div class="css-1dbjc4n"><div data-testid="language-currency-dropdown" style="cursor:pointer"><div class="css-1dbjc4n r-1awozwy r-1f0042m r-18u37iz r-9aw3ui r-1r8g8re r-tuq35u r-1e081e0 r-lrvibr" data-testid="language-currency-header"><div class="css-1dbjc4n dg-lang-flag-wrap"><img class="dg-flag dg-flag--header" src="images/flags/th.svg" alt="" width="20" height="14" /></div><div dir="auto" class="css-901oao r-1w9mtv9 r-fdjqy7" style="color:rgba(240,241,242,1.00);font-family:"Better Together","Godwit",sans-serif;font-size:16px;font-weight:600;line-height:20px"="">THB<!-- --> | <!-- -->TH</div><i data-lucide="chevron-down" class="dg-lucide" aria-hidden="true"></i></div></div><div class="css-1dbjc4n r-18u37iz r-633pao r-u8s1d r-j76wpu" style="left:-50%;margin-top:4px;-webkit-transform:translateX(-20%);transform:translateX(-20%)"><div class="css-1dbjc4n r-kdyh1x r-b4qz5r r-1udh08x r-4k2abt r-1ep47lj r-1clhhh9 r-1ftll1t" style="background-color:rgba(255,255,255,1.00);max-height:75vh;-webkit-transform:scaleY(0);transform:scaleY(0);visibility:hidden;width:auto"><div class="css-1dbjc4n r-4k2abt r-1ep47lj r-1clhhh9 r-1ftll1t" style="opacity:0;-webkit-transform:translateY(16px);transform:translateY(16px)"></div></div></div></div><div class="css-1dbjc4n r-kdyh1x r-1e081e0 r-5njf8e"><a href="/th-th/retrieve" class="css-4rbku5 r-1awozwy r-6koalj r-1q142lx"><div dir="auto" class="css-901oao r-1w9mtv9 r-fdjqy7" style="color:rgba(240,241,242,1.00);font-family:"Better Together","Godwit",sans-serif;font-size:16px;font-weight:600;line-height:20px"="">My Tours</div></a></div></div><div class="css-1dbjc4n r-1awozwy r-18u37iz r-9aw3ui r-1wtj0ep r-1wyyakw"><div role="button" tabindex="0" class="css-18t94o4 css-1dbjc4n r-1loqt21 r-1ny4l3l r-1otgn73" style="width:fit-content"><div class="css-1dbjc4n r-1awozwy r-18u37iz r-1777fci" style="background-color:rgba(255,232,209,1.00);border-top-color:rgba(0,0,0,0.00);border-right-color:rgba(0,0,0,0.00);border-bottom-color:rgba(0,0,0,0.00);border-left-color:rgba(0,0,0,0.00);border-top-left-radius:999px;border-top-right-radius:999px;border-bottom-right-radius:999px;border-bottom-left-radius:999px;border-top-width:3px;border-right-width:3px;border-bottom-width:3px;border-left-width:3px;height:36px;padding-right:16px;padding-left:16px"><div class="css-1dbjc4n r-13hce6t dg-login-icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dg-lucide dg-login-icon" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" x2="3" y1="12" y2="12"/></svg></div><div dir="auto" class="css-901oao css-bfa6kz r-1w9mtv9 r-1777fci r-fdjqy7 r-lrvibr" style="color:rgba(139,58,0,1.00);font-family:"Better Together","Godwit",sans-serif;font-size:16px;font-weight:600;line-height:20px"="">Log In</div></div><div class="css-1dbjc4n r-u8s1d" style="border-top-color:rgba(0,0,0,0.00);border-right-color:rgba(0,0,0,0.00);border-bottom-color:rgba(0,0,0,0.00);border-left-color:rgba(0,0,0,0.00);border-top-left-radius:999px;border-top-right-radius:999px;border-bottom-right-radius:999px;border-bottom-left-radius:999px;border-top-width:2px;border-right-width:2px;border-bottom-width:2px;border-left-width:2px;height:4px;left:-2px;min-width:4px;top:-2px;z-index:-10"></div></div><div role="button" tabindex="0" class="css-18t94o4 css-1dbjc4n r-1loqt21 r-1ny4l3l r-1otgn73" style="width:fit-content"><div class="css-1dbjc4n r-1awozwy r-18u37iz r-1777fci" style="background-color:rgba(255,94,31,1.00);border-top-color:rgba(0,0,0,0.00);border-right-color:rgba(0,0,0,0.00);border-bottom-color:rgba(0,0,0,0.00);border-left-color:rgba(0,0,0,0.00);border-top-left-radius:999px;border-top-right-radius:999px;border-bottom-right-radius:999px;border-bottom-left-radius:999px;border-top-width:3px;border-right-width:3px;border-bottom-width:3px;border-left-width:3px;height:36px;padding-right:16px;padding-left:16px"><div dir="auto" class="css-901oao css-bfa6kz r-1w9mtv9 r-1777fci r-fdjqy7 r-lrvibr" style="color:rgba(255,255,255,1.00);font-family:"Better Together","Godwit",sans-serif;font-size:16px;font-weight:600;line-height:20px"="">Sign Up</div></div><div class="css-1dbjc4n r-u8s1d" style="border-top-color:rgba(0,0,0,0.00);border-right-color:rgba(0,0,0,0.00);border-bottom-color:rgba(0,0,0,0.00);border-left-color:rgba(0,0,0,0.00);border-top-left-radius:999px;border-top-right-radius:999px;border-bottom-right-radius:999px;border-bottom-left-radius:999px;border-top-width:2px;border-right-width:2px;border-bottom-width:2px;border-left-width:2px;height:4px;left:-2px;min-width:4px;top:-2px;z-index:-10"></div></div></div></div></div><div class="css-1dbjc4n r-qklmqi r-1dppl8s r-5kkj8d r-13qz1uu"><div class="css-1dbjc4n r-1awozwy r-6koalj r-1ugchlj r-13qz1uu" data-testid="product-nav"><div class="dg-marquee" aria-label="Company announcement">
   <div class="dg-marquee__track">
     <span class="dg-marquee__item">D&amp;G Holiday (Thailand) Co., Ltd. — B2B travel partner in Thailand | Group Tours | FIT Tours | Events | Visa Services</span>
     <span class="dg-marquee__item" aria-hidden="true">D&amp;G Holiday (Thailand) Co., Ltd. — B2B travel partner in Thailand | Group Tours | FIT Tours | Events | Visa Services</span>
@@ -3642,7 +3762,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <p class="dg-destinations__eyebrow">Popular Destinations</p>
       <div class="dg-destinations__title-row">
         <h2 class="dg-destinations__title">Popular Destinations</h2>
-        <a class="dg-destinations__all" href="#merchandising">View All <span aria-hidden="true">→</span></a>
+        <a class="dg-destinations__all" href="destinations/">View All <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </div>
@@ -3725,6 +3845,177 @@ document.addEventListener("DOMContentLoaded", function () {
     </button>
   </div>
 </section>
+<!-- dg-home-gateways:start -->
+<section class="dg-gate" id="dg-gate-services" aria-labelledby="dg-gate-services-title">
+  <div class="dg-gate__panel">
+    <header class="dg-gate__head">
+      <p class="dg-gate__eyebrow">Travel Services</p>
+      <h2 id="dg-gate-services-title" class="dg-gate__title">How we plan every journey</h2>
+      <p class="dg-gate__lead">From private FIT and group series to hotels, transfers, and visa support — one Thailand desk for agencies and travelers.</p>
+    </header>
+    <ul class="dg-gate-pillars">
+      <li>
+        <a class="dg-gate-pillars__item" href="travel-services/private-tours/">
+          <span class="dg-gate-pillars__ico" aria-hidden="true"><i data-lucide="compass"></i></span>
+          <strong>Private &amp; FIT</strong>
+          <span>Tailored itineraries with dedicated planning support.</span>
+        </a>
+      </li>
+      <li>
+        <a class="dg-gate-pillars__item" href="travel-services/group-tours/">
+          <span class="dg-gate-pillars__ico" aria-hidden="true"><i data-lucide="users"></i></span>
+          <strong>Group Tours</strong>
+          <span>Series and custom groups with competitive net rates.</span>
+        </a>
+      </li>
+      <li>
+        <a class="dg-gate-pillars__item" href="travel-services/hotel-reservations/">
+          <span class="dg-gate-pillars__ico" aria-hidden="true"><i data-lucide="building-2"></i></span>
+          <strong>Hotels &amp; Stay</strong>
+          <span>Curated stays across Bangkok, beaches, and beyond.</span>
+        </a>
+      </li>
+      <li>
+        <a class="dg-gate-pillars__item" href="travel-services/transportation-transfers/">
+          <span class="dg-gate-pillars__ico" aria-hidden="true"><i data-lucide="car"></i></span>
+          <strong>Transfers &amp; Visa</strong>
+          <span>Ground handling, VIP transfers, and travel documents.</span>
+        </a>
+      </li>
+    </ul>
+    <div style="text-align:center">
+      <a class="dg-gate__more" href="travel-services/">Explore all travel services <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="dg-gate dg-gate--flush" id="dg-gate-regions" aria-labelledby="dg-gate-regions-title">
+  <div class="dg-gate__panel">
+    <header class="dg-gate__head">
+      <p class="dg-gate__eyebrow">Destinations</p>
+      <h2 id="dg-gate-regions-title" class="dg-gate__title">Thailand first — then the world</h2>
+      <p class="dg-gate__lead">Deep local expertise in Thailand, with regional desks for Asia, Europe, the Middle East, and worldwide programs.</p>
+    </header>
+    <div class="dg-gate-regions">
+      <a class="dg-gate-regions__card dg-gate-regions__card--feature" href="destinations/thailand/">
+        <img src="images/services/thailand-beach.jpg" alt="" loading="lazy" decoding="async" width="800" height="560" />
+        <span class="dg-gate-regions__copy">
+          <strong>Thailand</strong>
+          <span>Bangkok, Phuket, Chiang Mai, Pattaya &amp; more</span>
+        </span>
+      </a>
+      <a class="dg-gate-regions__card" href="destinations/asia/">
+        <img src="images/services/thailand-city.jpg" alt="" loading="lazy" decoding="async" width="480" height="360" />
+        <span class="dg-gate-regions__copy">
+          <strong>Asia</strong>
+          <span>Regional routes</span>
+        </span>
+      </a>
+      <a class="dg-gate-regions__card" href="destinations/europe/">
+        <img src="images/services/luxury-resort.jpg" alt="" loading="lazy" decoding="async" width="480" height="360" />
+        <span class="dg-gate-regions__copy">
+          <strong>Europe</strong>
+          <span>City &amp; leisure</span>
+        </span>
+      </a>
+      <a class="dg-gate-regions__card" href="destinations/middle-east/">
+        <img src="images/services/luxury-dining.jpg" alt="" loading="lazy" decoding="async" width="480" height="360" />
+        <span class="dg-gate-regions__copy">
+          <strong>Middle East</strong>
+          <span>Premium stays</span>
+        </span>
+      </a>
+      <a class="dg-gate-regions__card" href="destinations/worldwide/">
+        <img src="images/services/travel-planning.jpg" alt="" loading="lazy" decoding="async" width="480" height="360" />
+        <span class="dg-gate-regions__copy">
+          <strong>Worldwide</strong>
+          <span>Long-haul</span>
+        </span>
+      </a>
+    </div>
+    <div style="text-align:center">
+      <a class="dg-gate__more" href="destinations/">Browse all destinations <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="dg-gate dg-gate--flush" id="dg-gate-mice" aria-labelledby="dg-gate-mice-title">
+  <div class="dg-gate__panel">
+    <header class="dg-gate__head">
+      <p class="dg-gate__eyebrow">MICE &amp; Events</p>
+      <h2 id="dg-gate-mice-title" class="dg-gate__title">Meetings, incentives &amp; celebrations</h2>
+      <p class="dg-gate__lead">Corporate programs and event production across Thailand — venues, F&amp;B, logistics, and on-ground delivery.</p>
+    </header>
+    <div class="dg-gate-mice">
+      <a class="dg-gate-mice__tile" href="mice/">
+        <div class="dg-gate-mice__media">
+          <img src="images/services/meeting-conference.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
+        </div>
+        <div class="dg-gate-mice__body">
+          <strong>MICE Programs</strong>
+          <span>Meetings, incentives, conferences, exhibitions &amp; team building.</span>
+        </div>
+      </a>
+      <a class="dg-gate-mice__tile" href="events/">
+        <div class="dg-gate-mice__media">
+          <img src="images/services/gala-dinner.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
+        </div>
+        <div class="dg-gate-mice__body">
+          <strong>Events &amp; Galas</strong>
+          <span>Product launches, award nights, themed parties &amp; production.</span>
+        </div>
+      </a>
+      <a class="dg-gate-mice__tile" href="mice/corporate-group-travel/">
+        <div class="dg-gate-mice__media">
+          <img src="images/services/corporate-group.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
+        </div>
+        <div class="dg-gate-mice__body">
+          <strong>Corporate Groups</strong>
+          <span>Retreats, incentive travel, and multi-city business programs.</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="dg-gate dg-gate--flush" id="dg-gate-trust" aria-labelledby="dg-gate-trust-title">
+  <div class="dg-gate__panel">
+    <header class="dg-gate__head">
+      <p class="dg-gate__eyebrow">Why partners trust us</p>
+      <h2 id="dg-gate-trust-title" class="dg-gate__title">Credentials behind every booking</h2>
+    </header>
+    <ul class="dg-gate-trust">
+      <li>
+        <a class="dg-gate-trust__item" href="about/why-choose/">
+          <span class="dg-gate-trust__ico" aria-hidden="true"><i data-lucide="shield-check"></i></span>
+          <div>
+            <strong>Why Choose D&amp;G</strong>
+            <span>Licensed operator with transparent service standards.</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="dg-gate-trust__item" href="about/partners-certifications/">
+          <span class="dg-gate-trust__ico" aria-hidden="true"><i data-lucide="badge-check"></i></span>
+          <div>
+            <strong>Partners &amp; Certifications</strong>
+            <span>Trusted networks and compliance across Thailand.</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="dg-gate-trust__item" href="about/our-team/">
+          <span class="dg-gate-trust__ico" aria-hidden="true"><i data-lucide="handshake"></i></span>
+          <div>
+            <strong>Our Team</strong>
+            <span>Specialists for FIT, groups, MICE, and India market.</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
 <section class="dg-why" id="dg-why" aria-labelledby="dg-why-title">
   <div class="dg-why__panel">
     <header class="dg-why__head">
@@ -3802,7 +4093,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
       <div class="dg-b2b__actions">
         <a class="dg-b2b__btn dg-b2b__btn--primary" href="mailto:dgholidaythailand@gmail.com?subject=B2B%20Partner%20Registration">Become a Partner <span aria-hidden="true">→</span></a>
-        <a class="dg-b2b__btn dg-b2b__btn--ghost" href="mailto:dgholidaythailand@gmail.com?subject=Agent%20Rate%20Request">Request Agent Rates</a>
+        <a class="dg-b2b__btn dg-b2b__btn--ghost" href="about/partners-certifications/">Partners &amp; Credentials</a>
       </div>
     </div>
   </div>
@@ -3830,6 +4121,7 @@ document.addEventListener("DOMContentLoaded", function () {
           with attentive service in every detail. We are committed to creating lasting impressions
           and wonderful memories on every journey.
         </p>
+        <p style="margin:12px 0 0"><a class="dg-gate__more" href="about/company-profile/" style="margin-top:0">About the company <span aria-hidden="true">→</span></a></p>
         <dl class="dg-story__stats">
           <div>
             <dt>15+</dt>
@@ -3904,6 +4196,48 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   </aside>
 </section>
+<section class="dg-gate" id="dg-gate-spotlight" aria-label="Weddings and India Market">
+  <div class="dg-gate-split">
+    <a class="dg-gate-spot" href="destination-weddings/">
+      <img src="images/services/wedding-beach.jpg" alt="" loading="lazy" decoding="async" width="960" height="640" />
+      <div class="dg-gate-spot__copy">
+        <p class="dg-gate-spot__eyebrow">Destination Weddings</p>
+        <h3>Celebrate in Thailand</h3>
+        <p>Beach, luxury, Thai, and Indian wedding planning — venues, décor, and on-site coordination.</p>
+        <span class="dg-gate-spot__cta">Explore weddings <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+    <a class="dg-gate-spot" href="india-market/">
+      <img src="images/services/india-celebration.jpg" alt="" loading="lazy" decoding="async" width="720" height="640" />
+      <div class="dg-gate-spot__copy">
+        <p class="dg-gate-spot__eyebrow">India Market</p>
+        <h3>Dedicated India desk</h3>
+        <p>Hindi-speaking support, Indian catering, groups, incentives &amp; weddings.</p>
+        <span class="dg-gate-spot__cta">Visit India Market <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="dg-gate dg-gate--flush dg-gate--navy" id="dg-gate-gallery" aria-labelledby="dg-gate-gallery-title">
+  <div class="dg-gate__panel">
+    <div class="dg-gate-gallery">
+      <div class="dg-gate-gallery__copy">
+        <p class="dg-gate__eyebrow">Gallery</p>
+        <h2 id="dg-gate-gallery-title" class="dg-gate__title">Real moments from our journeys</h2>
+        <p class="dg-gate__lead">Tours, MICE, weddings, and events — see how D&amp;G Holiday delivers on the ground.</p>
+        <a class="dg-gate__more" href="gallery/">Open the gallery <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="dg-gate-gallery__mosaic" aria-hidden="true">
+        <a href="gallery/tours/"><img src="images/services/group-tourists.jpg" alt="" loading="lazy" decoding="async" width="640" height="480" /></a>
+        <a href="gallery/mice/"><img src="images/services/incentive-celebration.jpg" alt="" loading="lazy" decoding="async" width="480" height="320" /></a>
+        <a href="gallery/weddings/"><img src="images/services/wedding-ceremony.jpg" alt="" loading="lazy" decoding="async" width="480" height="320" /></a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- dg-home-gateways:end -->
+
 <div class="css-1dbjc4n"><div class="css-1dbjc4n" style="margin-top:0"><div class="css-1dbjc4n r-1kihuf0 r-ywje51 r-1fnihl3" style="padding-bottom:0px">
 <div class="css-1dbjc4n" id="merchandising"><div class="css-1dbjc4n" data-testid="merch-section"><div class="css-1dbjc4n" id="fvd-widget"><div class="css-1dbjc4n r-6koalj r-pw2am6"><div class="css-1dbjc4n"><div class="css-1dbjc4n"><div class="css-1dbjc4n r-18u37iz dg-section-title" style="-webkit-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:start;-webkit-box-pack:start;align-items:center"><i data-lucide="sparkles" class="dg-lucide dg-lucide-accent" aria-hidden="true"></i><h2 aria-level="2" dir="auto" role="heading" class="css-4rbku5 css-901oao css-bfa6kz r-uh8wd5 r-1w9mtv9 r-b88u0q r-fdjqy7" style="color:rgba(61,26,0,1.00);font-size:24px;line-height:28px">แนะนำแพ็กเกจทัวร์</h2></div><div dir="auto" class="css-901oao css-bfa6kz r-1w9mtv9 r-1s2bzr4 r-fdjqy7" style="color:rgba(61,26,0,1.00);font-family:"Better Together","Godwit",sans-serif;font-size:16px;font-weight:600;line-height:20px"="">Flight, hotel &amp; car booking for employees · Travel policy compliance / expense reporting</div></div></div><div class="css-1dbjc4n r-1udh08x r-5njf8e r-13qz1uu dg-corporate" id="dg-coupons" aria-label="Corporate Travel">
   <ul class="dg-corporate__grid">
@@ -3942,7 +4276,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <li>Full-service delivery: venue + F&amp;B + activities + production</li>
         <li>Proven portfolio with groups of 50–500+ participants</li>
       </ul>
-      <a class="dg-biz-services__btn" href="mailto:dgholidaythailand@gmail.com?subject=MICE%20%26%20Events%20Inquiry">Request MICE Proposal <span aria-hidden="true">→</span></a>
+      <a class="dg-biz-services__btn" href="mice/">Explore MICE Services <span aria-hidden="true">→</span></a>
     </article>
     <article class="dg-biz-services__card" id="dg-group-series">
       <span class="dg-biz-services__icon" aria-hidden="true"><i data-lucide="users"></i></span>
@@ -3954,7 +4288,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <li>Competitive per-person group rates</li>
         <li>Fast quotation for series departures and custom groups</li>
       </ul>
-      <a class="dg-biz-services__btn" href="mailto:dgholidaythailand@gmail.com?subject=Group%20Series%20Quotation">Request Group Quote <span aria-hidden="true">→</span></a>
+      <a class="dg-biz-services__btn" href="travel-services/group-tours/">Explore Group Tours <span aria-hidden="true">→</span></a>
     </article>
     <article class="dg-biz-services__card" id="dg-dmc">
       <span class="dg-biz-services__icon" aria-hidden="true"><i data-lucide="map"></i></span>
@@ -3966,7 +4300,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <li>Coverage: nationwide Thailand — Bangkok, Phuket, Chiang Mai, Pattaya &amp; beyond</li>
         <li>Dedicated partner support from arrival to departure</li>
       </ul>
-      <a class="dg-biz-services__btn" href="mailto:dgholidaythailand@gmail.com?subject=DMC%20Thailand%20Partnership">Partner with Our DMC <span aria-hidden="true">→</span></a>
+      <a class="dg-biz-services__btn" href="travel-services/inbound-travel/">Explore DMC Thailand <span aria-hidden="true">→</span></a>
     </article>
   </div>
 </section>
@@ -4105,15 +4439,14 @@ document.addEventListener("DOMContentLoaded", function () {
           <img src="images/payments/1736409268808-110a2a25fce25ddc7943d10b4f0edde4.png" alt="" width="84" height="28" loading="lazy" />
         </div>
       </div>
-
       <div class="dg-chrome-footer__right">
         <div class="dg-chrome-footer__about">
           <div class="dg-chrome-footer__col-title">เกี่ยวกับ D&amp;G Holiday</div>
           <ul class="dg-chrome-footer__links">
-            <li><a href="http://localhost:3000/services">วิธีจองทัวร์</a></li>
-            <li><a href="http://localhost:3000/contact">ติดต่อเรา</a></li>
-            <li><a href="http://localhost:3000/contact">สอบถามบริการ</a></li>
-            <li><a href="http://localhost:3000/about">เกี่ยวกับ D&amp;G Holiday</a></li>
+            <li><a href="travel-services/">Travel Services</a></li>
+            <li><a href="contact/">ติดต่อเรา</a></li>
+            <li><a href="proposal/">Request a Proposal</a></li>
+            <li><a href="about/">เกี่ยวกับ D&amp;G Holiday</a></li>
           </ul>
           <div class="dg-chrome-footer__col-title dg-chrome-footer__col-title--spaced">ติดตามเราได้ทาง</div>
           <ul class="dg-chrome-social" aria-label="Social media">
@@ -4130,37 +4463,34 @@ document.addEventListener("DOMContentLoaded", function () {
             </a>
           </div>
         </div>
-
         <div class="dg-chrome-footer__menus">
           <div class="dg-chrome-footer__cols dg-chrome-footer__cols--two">
             <div>
-              <div class="dg-chrome-footer__col-title">TRAVEL</div>
+              <div class="dg-chrome-footer__col-title">EXPLORE</div>
               <ul class="dg-chrome-footer__links">
-                <li><a href="http://localhost:3000/services">Tours</a></li>
-                <li><a href="http://localhost:3000/services">Hotels</a></li>
-                <li><a href="http://localhost:3000/services">Private Tours</a></li>
-                <li><a href="http://localhost:3000/services">Transfers</a></li>
+                <li><a href="about/">About Us</a></li>
+                <li><a href="travel-services/">Travel Services</a></li>
+                <li><a href="destinations/">Destinations</a></li>
+                <li><a href="gallery/">Gallery</a></li>
+                <li><a href="articles/">Blog &amp; Travel Guide</a></li>
               </ul>
             </div>
             <div>
               <div class="dg-chrome-footer__col-title">BUSINESS</div>
               <ul class="dg-chrome-footer__links">
-                <li><a href="http://localhost:3000/services">B2B Travel Partner</a></li>
-                <li><a href="http://localhost:3000/services">Corporate Travel</a></li>
-                <li><a href="http://localhost:3000/services">MICE &amp; Events</a></li>
-                <li><a href="http://localhost:3000/services">Group Series</a></li>
-                <li><a href="http://localhost:3000/services">DMC Thailand</a></li>
-                <li><a href="http://localhost:3000/articles">บล็อก</a></li>
-                <li><a href="http://localhost:3000/contact">ประกาศความเป็นส่วนตัว</a></li>
+                <li><a href="mice/">MICE &amp; Corporate</a></li>
+                <li><a href="events/">Event Management</a></li>
+                <li><a href="india-market/">India Market</a></li>
+                <li><a href="destination-weddings/">Weddings</a></li>
+                <li><a href="proposal/">Request a Proposal</a></li>
               </ul>
             </div>
           </div>
-
           <div class="dg-chrome-newsletter">
             <div class="dg-chrome-newsletter__title">รับข่าวสารและโปรโมชัน</div>
             <form class="dg-chrome-newsletter__form" action="mailto:dgholidaythailand@gmail.com" method="get">
-              <label class="sr-only" for="dg-footer-email">อีเมล</label>
-              <input id="dg-footer-email" type="email" name="email" required autocomplete="email" placeholder="กรอกอีเมลของคุณ" />
+              <label class="sr-only" for="dg-footer-email-0">อีเมล</label>
+              <input id="dg-footer-email-0" type="email" name="email" required autocomplete="email" placeholder="กรอกอีเมลของคุณ" />
               <button type="submit">สมัครรับข่าวสาร</button>
             </form>
           </div>
@@ -4169,4 +4499,39 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   </div>
   <div class="dg-chrome-footer__copy">Copyright © 2026 D&amp;G Holiday. All rights reserved</div>
-</footer></div></div><!-- disabled __NEXT_DATA__ --></div></body></html>
+</footer></div></div><!-- disabled __NEXT_DATA__ --></div><script id="dg-mega-toggle-js">(function(){
+  var btn=document.querySelector('.dg-mega__toggle');
+  var drawer=document.getElementById('dg-mega-drawer');
+  if(btn&&drawer){
+    btn.addEventListener('click',function(){
+      var open=btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded', open?'false':'true');
+      drawer.hidden=open;
+      if(open){
+        drawer.querySelectorAll('.dg-mega__item.is-open').forEach(function(n){ n.classList.remove('is-open'); });
+      }
+    });
+  }
+  function isMobileNav(){ return window.matchMedia('(max-width: 1100px)').matches; }
+  document.querySelectorAll('.dg-mega__drawer .dg-mega__item').forEach(function(item){
+    var link=item.querySelector(':scope > .dg-mega__link');
+    var panel=item.querySelector(':scope > .dg-mega__panel');
+    if(!link||!panel) return;
+    link.addEventListener('click',function(e){
+      if(!isMobileNav()) return;
+      e.preventDefault();
+      var open=item.classList.contains('is-open');
+      item.parentElement.querySelectorAll('.dg-mega__item.is-open').forEach(function(n){
+        if(n!==item) n.classList.remove('is-open');
+      });
+      item.classList.toggle('is-open', !open);
+    });
+  });
+  var header=document.querySelector('.r-bztko3.r-ipm5af.r-fgfhv.r-8ny0jo')
+    || document.querySelector('.r-bztko3.r-ipm5af.r-fgfhv');
+  if(header){
+    function sync(){ header.classList.add('dg-header-scrolled'); }
+    sync();
+    window.addEventListener('scroll', sync, { passive: true });
+  }
+})();</script></body></html>

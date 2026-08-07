@@ -5,7 +5,8 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: transparent;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(3,18,26,0.08), 0 4px 16px rgba(3,18,26,0.06);
   transition: background .2s ease, box-shadow .2s ease;
 }
 .dg-chrome-header.is-scrolled {
@@ -15,7 +16,8 @@
 .dg-chrome-header__shade {
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(180deg, rgba(3,18,26,0.55) 0%, rgba(3,18,26,0.2) 70%, rgba(3,18,26,0) 100%);
+  background-image: none;
+  opacity: 0;
   pointer-events: none;
   z-index: 0;
   transition: opacity .2s ease;
@@ -48,7 +50,7 @@
   line-height: 1.1;
   letter-spacing: -0.02em;
   white-space: nowrap;
-  color: #fff;
+  color: #03121A;
   transition: color .2s ease;
 }
 .dg-chrome-header.is-scrolled .dg-chrome-brand__text { color: #03121A; }
@@ -63,7 +65,7 @@
   margin: 0 8px;
 }
 .dg-chrome-nav a {
-  color: #F0F1F2;
+  color: #03121A;
   font-family: "Better Together", "Godwit", sans-serif;
   font-size: 14px;
   font-weight: 600;
@@ -74,8 +76,8 @@
   border-radius: 8px;
   transition: background .15s ease, color .15s ease;
 }
-.dg-chrome-nav a:hover { background: rgba(255,255,255,0.12); color: #fff; }
-.dg-chrome-nav a.is-active { background: rgba(255,255,255,0.16); }
+.dg-chrome-nav a:hover { background: rgba(3,18,26,0.06); color: #03121A; }
+.dg-chrome-nav a.is-active { background: rgba(3,18,26,0.06); }
 .dg-chrome-header.is-scrolled .dg-chrome-nav a { color: #03121A; }
 .dg-chrome-header.is-scrolled .dg-chrome-nav a:hover,
 .dg-chrome-header.is-scrolled .dg-chrome-nav a.is-active {
@@ -93,7 +95,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #F0F1F2;
+  color: #03121A;
   font-size: 16px;
   font-weight: 600;
   line-height: 20px;
@@ -139,7 +141,8 @@
   z-index: 1;
   height: 36px;
   overflow: hidden;
-  border-top: 1px solid rgba(255,255,255,0.08);
+  border-top: 1px solid rgba(3,18,26,0.06);
+  background: #fff;
   transition: border-color .2s ease, background .2s ease;
 }
 .dg-chrome-header.is-scrolled .dg-chrome-marquee-wrap {
@@ -165,13 +168,13 @@
 .dg-chrome-marquee__item {
   flex: 0 0 auto;
   white-space: nowrap;
-  color: #F0F1F2;
+  color: #03121A;
   font-family: "Better Together", "Godwit", sans-serif;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.01em;
   line-height: 36px;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.25);
+  text-shadow: none;
   transition: color .2s ease;
 }
 .dg-chrome-header.is-scrolled .dg-chrome-marquee__item {

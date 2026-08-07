@@ -1,0 +1,1221 @@
+{
+  "items": [
+    {
+      "id": "home",
+      "label": "Home",
+      "href": "/",
+      "external": true,
+      "kind": "link"
+    },
+    {
+      "id": "about",
+      "label": "About Us",
+      "href": "/about/",
+      "kind": "section",
+      "heroTitle": "About Us",
+      "description": "Learn about D&G Holiday Thailand — our company, vision, team, and certifications.",
+      "children": [
+        {
+          "id": "company-profile",
+          "label": "Company Profile",
+          "href": "/about/company-profile/",
+          "heroTitle": "Company Profile",
+          "description": "D&G Holiday (Thailand) Co., Ltd. — your trusted travel and destination management company in Thailand for corporate, agency, and premium guests.",
+          "bullets": [
+            "Licensed Tourism Business operator in Thailand",
+            "Full-service DMC for inbound, outbound, and domestic travel",
+            "Dedicated B2B desks for agencies and corporate partners",
+            "Multilingual operations including English, Thai, Chinese, and Hindi"
+          ]
+        },
+        {
+          "id": "vision-mission",
+          "label": "Our Vision & Mission",
+          "href": "/about/vision-mission/",
+          "heroTitle": "Our Vision & Mission",
+          "description": "Driven by passion and inspired by excellence — our vision, mission, and core values as Thailand’s trusted travel and events partner.",
+          "bullets": [
+            "Vision: Be Thailand’s most trusted B2B travel and events partner",
+            "Mission: Deliver reliable operations, transparent pricing, and warm hospitality",
+            "Values: Integrity, precision, cultural care, and guest-first service",
+            "Commitment: Continuous improvement across every departure and event"
+          ]
+        },
+        {
+          "id": "why-choose",
+          "label": "Why Choose D&G Holiday",
+          "href": "/about/why-choose/",
+          "heroTitle": "Why Choose D&G Holiday",
+          "description": "Trusted by travelers, corporations, and international partners — reasons to choose D&G Holiday Thailand.",
+          "bullets": [
+            "TAT licensed and ATTA member credentials",
+            "Strong India-market and MICE capabilities",
+            "Hotel, transport, guide, and venue networks nationwide",
+            "Single partner desk for quotes, ops, and escalation"
+          ]
+        },
+        {
+          "id": "our-team",
+          "label": "Our Team",
+          "href": "/about/our-team/",
+          "heroTitle": "Our Team",
+          "description": "Meet the experts behind every journey — management, consultants, MICE, events, operations, and support.",
+          "bullets": [
+            "Experienced destination managers and tour leaders",
+            "MICE and wedding production coordinators",
+            "Multilingual guest support for FIT and groups",
+            "24/7 duty phone for active programs"
+          ]
+        },
+        {
+          "id": "partners-certifications",
+          "label": "Partners & Certifications",
+          "href": "/about/partners-certifications/",
+          "heroTitle": "Partners & Certifications",
+          "description": "Trusted worldwide — partners, industry memberships, licenses, and our global service network.",
+          "bullets": [
+            "Tourism Business License No. 11/12868",
+            "ATTA Member No. 05614",
+            "Company Registration No. 0105561154132",
+            "Trusted hotel, venue, and transport partners across Thailand"
+          ]
+        }
+      ],
+      "navChildren": [
+        {
+          "id": "company-profile",
+          "label": "Company Profile",
+          "href": "/about/company-profile/",
+          "heroTitle": "Company Profile",
+          "description": "D&G Holiday (Thailand) Co., Ltd. — your trusted travel and destination management company in Thailand for corporate, agency, and premium guests.",
+          "bullets": [
+            "Licensed Tourism Business operator in Thailand",
+            "Full-service DMC for inbound, outbound, and domestic travel",
+            "Dedicated B2B desks for agencies and corporate partners",
+            "Multilingual operations including English, Thai, Chinese, and Hindi"
+          ]
+        },
+        {
+          "id": "vision-mission",
+          "label": "Our Vision & Mission",
+          "href": "/about/vision-mission/",
+          "heroTitle": "Our Vision & Mission",
+          "description": "Driven by passion and inspired by excellence — our vision, mission, and core values as Thailand’s trusted travel and events partner.",
+          "bullets": [
+            "Vision: Be Thailand’s most trusted B2B travel and events partner",
+            "Mission: Deliver reliable operations, transparent pricing, and warm hospitality",
+            "Values: Integrity, precision, cultural care, and guest-first service",
+            "Commitment: Continuous improvement across every departure and event"
+          ]
+        },
+        {
+          "id": "why-choose",
+          "label": "Why Choose D&G Holiday",
+          "href": "/about/why-choose/",
+          "heroTitle": "Why Choose D&G Holiday",
+          "description": "Trusted by travelers, corporations, and international partners — reasons to choose D&G Holiday Thailand.",
+          "bullets": [
+            "TAT licensed and ATTA member credentials",
+            "Strong India-market and MICE capabilities",
+            "Hotel, transport, guide, and venue networks nationwide",
+            "Single partner desk for quotes, ops, and escalation"
+          ]
+        },
+        {
+          "id": "our-team",
+          "label": "Our Team",
+          "href": "/about/our-team/",
+          "heroTitle": "Our Team",
+          "description": "Meet the experts behind every journey — management, consultants, MICE, events, operations, and support.",
+          "bullets": [
+            "Experienced destination managers and tour leaders",
+            "MICE and wedding production coordinators",
+            "Multilingual guest support for FIT and groups",
+            "24/7 duty phone for active programs"
+          ]
+        },
+        {
+          "id": "partners-certifications",
+          "label": "Partners & Certifications",
+          "href": "/about/partners-certifications/",
+          "heroTitle": "Partners & Certifications",
+          "description": "Trusted worldwide — partners, industry memberships, licenses, and our global service network.",
+          "bullets": [
+            "Tourism Business License No. 11/12868",
+            "ATTA Member No. 05614",
+            "Company Registration No. 0105561154132",
+            "Trusted hotel, venue, and transport partners across Thailand"
+          ]
+        },
+        {
+          "id": "gallery-overview",
+          "label": "Gallery",
+          "href": "/gallery/",
+          "description": "Tours, MICE, events, and wedding photo moments."
+        }
+      ]
+    },
+    {
+      "id": "travel-services",
+      "label": "Travel Services",
+      "href": "/travel-services/",
+      "kind": "section",
+      "heroTitle": "Travel Services",
+      "description": "Inbound, outbound, domestic, group, private, and luxury travel — plus hotels, transfers, and visa support.",
+      "children": [
+        {
+          "id": "inbound-travel",
+          "label": "Inbound Travel",
+          "href": "/travel-services/inbound-travel/",
+          "heroTitle": "Inbound Travel",
+          "description": "Complete Thailand ground handling for overseas agencies and independent travelers.",
+          "bullets": [
+            "Itinerary design and packaging",
+            "Guides, tickets, and attractions",
+            "Hotel and transfer coordination",
+            "Multilingual guest support"
+          ]
+        },
+        {
+          "id": "outbound-travel",
+          "label": "Outbound Travel",
+          "href": "/travel-services/outbound-travel/",
+          "heroTitle": "Outbound Travel",
+          "description": "Curated international journeys from Thailand to Asia, Europe, the Middle East, and beyond.",
+          "bullets": [
+            "Ready-made and tailor-made programs",
+            "Flight and hotel arrangements",
+            "Group and FIT options",
+            "Visa guidance where required"
+          ]
+        },
+        {
+          "id": "domestic-travel",
+          "label": "Domestic Travel",
+          "href": "/travel-services/domestic-travel/",
+          "heroTitle": "Domestic Travel",
+          "description": "Discover Thailand with domestic packages for leisure, corporate, and educational groups.",
+          "bullets": [
+            "Bangkok, Chiang Mai, Phuket, Pattaya and more",
+            "School and company outing programs",
+            "Island and cultural itineraries",
+            "Flexible group sizes"
+          ]
+        },
+        {
+          "id": "group-tours",
+          "label": "Group Tours",
+          "href": "/travel-services/group-tours/",
+          "heroTitle": "Group Tours",
+          "description": "Scalable group operations for schools, companies, associations, and inbound series.",
+          "bullets": [
+            "Groups from 15 to 200+ travelers",
+            "Coach charter and logistics",
+            "Competitive series rates",
+            "Dedicated group coordinators"
+          ]
+        },
+        {
+          "id": "private-tours",
+          "label": "Private Tours",
+          "href": "/travel-services/private-tours/",
+          "heroTitle": "Private Tours",
+          "description": "Private FIT itineraries with personalized pacing, guides, and experiences.",
+          "bullets": [
+            "Custom day-by-day planning",
+            "Private cars and guides",
+            "Family, couple, and VIP programs",
+            "Flexible departure dates"
+          ]
+        },
+        {
+          "id": "luxury-travel",
+          "label": "Luxury Travel",
+          "href": "/travel-services/luxury-travel/",
+          "heroTitle": "Luxury Travel",
+          "description": "High-touch luxury journeys with premium stays, private access, and refined service.",
+          "bullets": [
+            "Five-star and boutique stays",
+            "Private transfers and VIP handling",
+            "Exclusive experiences",
+            "Concierge-level support"
+          ]
+        },
+        {
+          "id": "hotel-reservations",
+          "label": "Hotel Reservations",
+          "href": "/travel-services/hotel-reservations/",
+          "heroTitle": "Hotel Reservations",
+          "description": "Contracted and preferred hotel inventory for leisure, corporate, and MICE programs.",
+          "bullets": [
+            "City hotels, resorts, and villas",
+            "Allotments for groups and series",
+            "Special contracted rates",
+            "Booking confirmation and support"
+          ]
+        },
+        {
+          "id": "transportation-transfers",
+          "label": "Transportation & Transfers",
+          "href": "/travel-services/transportation-transfers/",
+          "heroTitle": "Transportation & Transfers",
+          "description": "Airport transfers, private cars, VIP limousines, and group coaches across Thailand.",
+          "bullets": [
+            "Meet & greet services",
+            "Private and shared transfers",
+            "Coach and minivan charter",
+            "Event shuttle planning"
+          ]
+        },
+        {
+          "id": "visa-travel-support",
+          "label": "Visa & Travel Support",
+          "href": "/travel-services/visa-travel-support/",
+          "heroTitle": "Visa & Travel Support",
+          "description": "Practical visa guidance and travel assistance for guests entering or departing Thailand.",
+          "bullets": [
+            "Document checklists",
+            "Invitation letter support where applicable",
+            "Travel insurance referrals",
+            "Pre-arrival briefing for groups"
+          ]
+        }
+      ],
+      "navChildren": [
+        {
+          "id": "inbound-travel",
+          "label": "Inbound Travel",
+          "href": "/travel-services/inbound-travel/",
+          "heroTitle": "Inbound Travel",
+          "description": "Complete Thailand ground handling for overseas agencies and independent travelers.",
+          "bullets": [
+            "Itinerary design and packaging",
+            "Guides, tickets, and attractions",
+            "Hotel and transfer coordination",
+            "Multilingual guest support"
+          ]
+        },
+        {
+          "id": "outbound-travel",
+          "label": "Outbound Travel",
+          "href": "/travel-services/outbound-travel/",
+          "heroTitle": "Outbound Travel",
+          "description": "Curated international journeys from Thailand to Asia, Europe, the Middle East, and beyond.",
+          "bullets": [
+            "Ready-made and tailor-made programs",
+            "Flight and hotel arrangements",
+            "Group and FIT options",
+            "Visa guidance where required"
+          ]
+        },
+        {
+          "id": "domestic-travel",
+          "label": "Domestic Travel",
+          "href": "/travel-services/domestic-travel/",
+          "heroTitle": "Domestic Travel",
+          "description": "Discover Thailand with domestic packages for leisure, corporate, and educational groups.",
+          "bullets": [
+            "Bangkok, Chiang Mai, Phuket, Pattaya and more",
+            "School and company outing programs",
+            "Island and cultural itineraries",
+            "Flexible group sizes"
+          ]
+        },
+        {
+          "id": "group-tours",
+          "label": "Group Tours",
+          "href": "/travel-services/group-tours/",
+          "heroTitle": "Group Tours",
+          "description": "Scalable group operations for schools, companies, associations, and inbound series.",
+          "bullets": [
+            "Groups from 15 to 200+ travelers",
+            "Coach charter and logistics",
+            "Competitive series rates",
+            "Dedicated group coordinators"
+          ]
+        },
+        {
+          "id": "private-tours",
+          "label": "Private Tours",
+          "href": "/travel-services/private-tours/",
+          "heroTitle": "Private Tours",
+          "description": "Private FIT itineraries with personalized pacing, guides, and experiences.",
+          "bullets": [
+            "Custom day-by-day planning",
+            "Private cars and guides",
+            "Family, couple, and VIP programs",
+            "Flexible departure dates"
+          ]
+        },
+        {
+          "id": "luxury-travel",
+          "label": "Luxury Travel",
+          "href": "/travel-services/luxury-travel/",
+          "heroTitle": "Luxury Travel",
+          "description": "High-touch luxury journeys with premium stays, private access, and refined service.",
+          "bullets": [
+            "Five-star and boutique stays",
+            "Private transfers and VIP handling",
+            "Exclusive experiences",
+            "Concierge-level support"
+          ]
+        },
+        {
+          "id": "hotel-reservations",
+          "label": "Hotel Reservations",
+          "href": "/travel-services/hotel-reservations/",
+          "heroTitle": "Hotel Reservations",
+          "description": "Contracted and preferred hotel inventory for leisure, corporate, and MICE programs.",
+          "bullets": [
+            "City hotels, resorts, and villas",
+            "Allotments for groups and series",
+            "Special contracted rates",
+            "Booking confirmation and support"
+          ]
+        },
+        {
+          "id": "transportation-transfers",
+          "label": "Transportation & Transfers",
+          "href": "/travel-services/transportation-transfers/",
+          "heroTitle": "Transportation & Transfers",
+          "description": "Airport transfers, private cars, VIP limousines, and group coaches across Thailand.",
+          "bullets": [
+            "Meet & greet services",
+            "Private and shared transfers",
+            "Coach and minivan charter",
+            "Event shuttle planning"
+          ]
+        },
+        {
+          "id": "visa-travel-support",
+          "label": "Visa & Travel Support",
+          "href": "/travel-services/visa-travel-support/",
+          "heroTitle": "Visa & Travel Support",
+          "description": "Practical visa guidance and travel assistance for guests entering or departing Thailand.",
+          "bullets": [
+            "Document checklists",
+            "Invitation letter support where applicable",
+            "Travel insurance referrals",
+            "Pre-arrival briefing for groups"
+          ]
+        },
+        {
+          "id": "india-market-overview",
+          "label": "India Market (Overview)",
+          "href": "/india-market/",
+          "description": "Specialized India-market programs — groups, corporate, incentives, weddings, catering, and Hindi support."
+        },
+        {
+          "id": "indian-group-tours",
+          "label": "Indian Group Tours",
+          "href": "/india-market/indian-group-tours/",
+          "heroTitle": "Indian Group Tours",
+          "description": "Inbound group tours designed for Indian traveler preferences and pacing.",
+          "bullets": [
+            "Popular Thailand circuits",
+            "Vegetarian and Jain meal planning",
+            "Hindi / English guiding options",
+            "Shopping and temple inclusions"
+          ]
+        },
+        {
+          "id": "indian-corporate-groups",
+          "label": "Indian Corporate Groups",
+          "href": "/india-market/indian-corporate-groups/",
+          "heroTitle": "Indian Corporate Groups",
+          "description": "Corporate movements for Indian companies with clear SLAs and reporting.",
+          "bullets": [
+            "Conference + leisure blends",
+            "Invoice-ready documentation",
+            "Duty managers for large groups",
+            "Custom branding touchpoints"
+          ]
+        },
+        {
+          "id": "indian-incentive-travel",
+          "label": "Indian Incentive Travel",
+          "href": "/india-market/indian-incentive-travel/",
+          "heroTitle": "Indian Incentive Travel",
+          "description": "High-energy incentive programs tailored for Indian award winners and dealers.",
+          "bullets": [
+            "Gala and Bollywood-style nights",
+            "Beach and adventure options",
+            "Gift and surprise moments",
+            "End-to-end ops control"
+          ]
+        },
+        {
+          "id": "indian-wedding-services",
+          "label": "Indian Wedding Services",
+          "href": "/india-market/indian-wedding-services/",
+          "heroTitle": "Indian Wedding Services",
+          "description": "Destination wedding support for Indian ceremonies in Thailand.",
+          "bullets": [
+            "Mandap and décor coordination",
+            "Priest and ritual support referrals",
+            "Guest hospitality desks",
+            "Multi-event wedding timelines"
+          ]
+        },
+        {
+          "id": "indian-catering",
+          "label": "Indian Catering",
+          "href": "/india-market/indian-catering/",
+          "heroTitle": "Indian Catering",
+          "description": "Authentic Indian catering for groups, incentives, and wedding events.",
+          "bullets": [
+            "North and South Indian menus",
+            "Live counters and thali service",
+            "Jain / vegetarian / non-veg options",
+            "Large-banquet capacity"
+          ]
+        },
+        {
+          "id": "hindi-speaking-support",
+          "label": "Hindi-speaking Support",
+          "href": "/india-market/hindi-speaking-support/",
+          "heroTitle": "Hindi-speaking Support",
+          "description": "Hindi-speaking guides, hosts, and operations contacts for smoother guest care.",
+          "bullets": [
+            "Hindi-speaking tour leaders",
+            "Airport meet & greet",
+            "On-tour guest messaging",
+            "Escalation in preferred language"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mice",
+      "label": "MICE & Events",
+      "href": "/mice/",
+      "kind": "section",
+      "heroTitle": "MICE & Events",
+      "description": "Meetings, incentives, conferences, exhibitions, corporate travel, and full event production across Thailand.",
+      "children": [
+        {
+          "id": "meetings",
+          "label": "Meetings",
+          "href": "/mice/meetings/",
+          "heroTitle": "Meetings",
+          "description": "Board meetings, offsites, and business gatherings with reliable venue and AV support.",
+          "bullets": [
+            "Venue sourcing and contracting",
+            "AV and staging coordination",
+            "Catering and F&B",
+            "On-site event managers"
+          ]
+        },
+        {
+          "id": "incentive-travel",
+          "label": "Incentive Travel",
+          "href": "/mice/incentive-travel/",
+          "heroTitle": "Incentive Travel",
+          "description": "Reward programs that combine destination thrills with polished hospitality.",
+          "bullets": [
+            "Theme concepts and gifting",
+            "Exclusive venues and experiences",
+            "Group logistics and hospitality desks",
+            "Memorable evening events"
+          ]
+        },
+        {
+          "id": "seminars-conferences",
+          "label": "Seminars & Conferences",
+          "href": "/mice/seminars-conferences/",
+          "heroTitle": "Seminars & Conferences",
+          "description": "End-to-end support for seminars, conferences, and association gatherings.",
+          "bullets": [
+            "Program flow and registration support",
+            "Speaker and delegate logistics",
+            "Breakout rooms and exhibition space",
+            "Hotel room blocks"
+          ]
+        },
+        {
+          "id": "corporate-group-travel",
+          "label": "Corporate Group Travel",
+          "href": "/mice/corporate-group-travel/",
+          "heroTitle": "Corporate Group Travel",
+          "description": "Company trips, study tours, and multi-city corporate movements with clear reporting.",
+          "bullets": [
+            "Policy-friendly arrangements",
+            "Group air and ground coordination",
+            "Duty of care support",
+            "Invoice and documentation packages"
+          ]
+        },
+        {
+          "id": "team-building",
+          "label": "Team Building",
+          "href": "/mice/team-building/",
+          "heroTitle": "Team Building",
+          "description": "Active and creative team-building programs tailored to your company culture.",
+          "bullets": [
+            "Indoor and outdoor formats",
+            "Facilitators and equipment",
+            "CSR and volunteering options",
+            "Custom branding"
+          ]
+        },
+        {
+          "id": "exhibitions",
+          "label": "Exhibitions",
+          "href": "/mice/exhibitions/",
+          "heroTitle": "Exhibitions",
+          "description": "Booth, visitor, and exhibitor support for trade shows and public exhibitions.",
+          "bullets": [
+            "Booth build coordination",
+            "Staffing and hospitality",
+            "Freight and logistics guidance",
+            "Side-event planning"
+          ]
+        },
+        {
+          "id": "corporate-retreats",
+          "label": "Corporate Retreats",
+          "href": "/mice/corporate-retreats/",
+          "heroTitle": "Corporate Retreats",
+          "description": "Retreats that balance strategy sessions with wellness and destination downtime.",
+          "bullets": [
+            "Resort and villa retreat venues",
+            "Wellness and leisure add-ons",
+            "Private dining and networking",
+            "Full ground handling"
+          ]
+        }
+      ],
+      "navChildren": [
+        {
+          "id": "meetings",
+          "label": "Meetings",
+          "href": "/mice/meetings/",
+          "heroTitle": "Meetings",
+          "description": "Board meetings, offsites, and business gatherings with reliable venue and AV support.",
+          "bullets": [
+            "Venue sourcing and contracting",
+            "AV and staging coordination",
+            "Catering and F&B",
+            "On-site event managers"
+          ]
+        },
+        {
+          "id": "incentive-travel",
+          "label": "Incentive Travel",
+          "href": "/mice/incentive-travel/",
+          "heroTitle": "Incentive Travel",
+          "description": "Reward programs that combine destination thrills with polished hospitality.",
+          "bullets": [
+            "Theme concepts and gifting",
+            "Exclusive venues and experiences",
+            "Group logistics and hospitality desks",
+            "Memorable evening events"
+          ]
+        },
+        {
+          "id": "seminars-conferences",
+          "label": "Seminars & Conferences",
+          "href": "/mice/seminars-conferences/",
+          "heroTitle": "Seminars & Conferences",
+          "description": "End-to-end support for seminars, conferences, and association gatherings.",
+          "bullets": [
+            "Program flow and registration support",
+            "Speaker and delegate logistics",
+            "Breakout rooms and exhibition space",
+            "Hotel room blocks"
+          ]
+        },
+        {
+          "id": "corporate-group-travel",
+          "label": "Corporate Group Travel",
+          "href": "/mice/corporate-group-travel/",
+          "heroTitle": "Corporate Group Travel",
+          "description": "Company trips, study tours, and multi-city corporate movements with clear reporting.",
+          "bullets": [
+            "Policy-friendly arrangements",
+            "Group air and ground coordination",
+            "Duty of care support",
+            "Invoice and documentation packages"
+          ]
+        },
+        {
+          "id": "team-building",
+          "label": "Team Building",
+          "href": "/mice/team-building/",
+          "heroTitle": "Team Building",
+          "description": "Active and creative team-building programs tailored to your company culture.",
+          "bullets": [
+            "Indoor and outdoor formats",
+            "Facilitators and equipment",
+            "CSR and volunteering options",
+            "Custom branding"
+          ]
+        },
+        {
+          "id": "exhibitions",
+          "label": "Exhibitions",
+          "href": "/mice/exhibitions/",
+          "heroTitle": "Exhibitions",
+          "description": "Booth, visitor, and exhibitor support for trade shows and public exhibitions.",
+          "bullets": [
+            "Booth build coordination",
+            "Staffing and hospitality",
+            "Freight and logistics guidance",
+            "Side-event planning"
+          ]
+        },
+        {
+          "id": "corporate-retreats",
+          "label": "Corporate Retreats",
+          "href": "/mice/corporate-retreats/",
+          "heroTitle": "Corporate Retreats",
+          "description": "Retreats that balance strategy sessions with wellness and destination downtime.",
+          "bullets": [
+            "Resort and villa retreat venues",
+            "Wellness and leisure add-ons",
+            "Private dining and networking",
+            "Full ground handling"
+          ]
+        },
+        {
+          "id": "events-overview",
+          "label": "Event Management (Overview)",
+          "href": "/events/",
+          "description": "Gala dinners, award nights, product launches, themed parties, and full entertainment production."
+        },
+        {
+          "id": "gala-dinner",
+          "label": "Gala Dinner",
+          "href": "/events/gala-dinner/",
+          "heroTitle": "Gala Dinner",
+          "description": "Elegant gala dinners with staging, entertainment, and polished guest flow.",
+          "bullets": [
+            "Venue styling and décor",
+            "MC and entertainment lineup",
+            "Menu design and service",
+            "Run-of-show management"
+          ]
+        },
+        {
+          "id": "award-ceremonies",
+          "label": "Award Ceremonies",
+          "href": "/events/award-ceremonies/",
+          "heroTitle": "Award Ceremonies",
+          "description": "Award nights with precise cueing, lighting, and guest experience.",
+          "bullets": [
+            "Stage and AV direction",
+            "Trophy and gift logistics",
+            "VIP seating plans",
+            "Photo and media moments"
+          ]
+        },
+        {
+          "id": "annual-company-parties",
+          "label": "Annual Company Parties",
+          "href": "/events/annual-company-parties/",
+          "heroTitle": "Annual Company Parties",
+          "description": "Year-end and anniversary celebrations that feel festive and well-run.",
+          "bullets": [
+            "Theme concepts",
+            "Games and entertainment",
+            "Buffet or plated dining",
+            "Transportation planning"
+          ]
+        },
+        {
+          "id": "product-launches",
+          "label": "Product Launches",
+          "href": "/events/product-launches/",
+          "heroTitle": "Product Launches",
+          "description": "Launch events that spotlight your brand with impactful staging and hospitality.",
+          "bullets": [
+            "Concept and creative direction",
+            "Press and influencer hosting",
+            "Demo zones and sampling",
+            "After-party options"
+          ]
+        },
+        {
+          "id": "themed-events",
+          "label": "Themed Events",
+          "href": "/events/themed-events/",
+          "heroTitle": "Themed Events",
+          "description": "Immersive themed evenings — tropical, cultural, luxury, or fully custom.",
+          "bullets": [
+            "Set design and props",
+            "Costume and casting support",
+            "Custom F&B journeys",
+            "Photo installations"
+          ]
+        },
+        {
+          "id": "private-parties",
+          "label": "Private Parties",
+          "href": "/events/private-parties/",
+          "heroTitle": "Private Parties",
+          "description": "Private celebrations for executives, partners, and VIP guests.",
+          "bullets": [
+            "Intimate venue selection",
+            "Personal chef and butler options",
+            "Security and privacy planning",
+            "Bespoke entertainment"
+          ]
+        },
+        {
+          "id": "entertainment-production",
+          "label": "Entertainment & Production",
+          "href": "/events/entertainment-production/",
+          "heroTitle": "Entertainment & Production",
+          "description": "Show production, artists, dancers, bands, and technical crews under one desk.",
+          "bullets": [
+            "Artist booking",
+            "Choreography and rehearsals",
+            "Lighting and sound",
+            "Stage management"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "destination-weddings",
+      "label": "Weddings",
+      "href": "/destination-weddings/",
+      "kind": "section",
+      "heroTitle": "Destination Weddings",
+      "description": "Indian, Thai, luxury, and beach weddings — venues and full planning services in Thailand.",
+      "children": [
+        {
+          "id": "indian-weddings",
+          "label": "Indian Weddings",
+          "href": "/destination-weddings/indian-weddings/",
+          "heroTitle": "Indian Weddings",
+          "description": "Multi-day Indian destination weddings with ceremony, décor, and guest care.",
+          "bullets": [
+            "Ceremony and reception planning",
+            "Vendor coordination",
+            "Guest room blocks",
+            "Welcome desks and transfers"
+          ]
+        },
+        {
+          "id": "thai-weddings",
+          "label": "Thai Weddings",
+          "href": "/destination-weddings/thai-weddings/",
+          "heroTitle": "Thai Weddings",
+          "description": "Traditional and contemporary Thai wedding celebrations.",
+          "bullets": [
+            "Blessing ceremonies",
+            "Cultural styling",
+            "Photography partnerships",
+            "Intimate or banquet formats"
+          ]
+        },
+        {
+          "id": "luxury-weddings",
+          "label": "Luxury Weddings",
+          "href": "/destination-weddings/luxury-weddings/",
+          "heroTitle": "Luxury Weddings",
+          "description": "Ultra-premium weddings with five-star venues and white-glove coordination.",
+          "bullets": [
+            "Iconic resort venues",
+            "Designer décor",
+            "Private chefs and sommeliers",
+            "VIP guest handling"
+          ]
+        },
+        {
+          "id": "beach-weddings",
+          "label": "Beach Weddings",
+          "href": "/destination-weddings/beach-weddings/",
+          "heroTitle": "Beach Weddings",
+          "description": "Sunset beach ceremonies and seaside receptions in Phuket, Samui, and beyond.",
+          "bullets": [
+            "Permit and location handling",
+            "Weather contingency plans",
+            "Floral arches and aisle styling",
+            "Sunset photography windows"
+          ]
+        },
+        {
+          "id": "wedding-venues",
+          "label": "Wedding Venues",
+          "href": "/destination-weddings/wedding-venues/",
+          "heroTitle": "Wedding Venues",
+          "description": "Curated venue shortlists — beach, ballroom, garden, villa, and rooftop.",
+          "bullets": [
+            "Capacity and layout matching",
+            "Site inspections",
+            "Preferred rate negotiation",
+            "Backup indoor options"
+          ]
+        },
+        {
+          "id": "wedding-planning-services",
+          "label": "Wedding Planning Services",
+          "href": "/destination-weddings/wedding-planning-services/",
+          "heroTitle": "Wedding Planning Services",
+          "description": "Full or partial wedding planning from concept to farewell brunch.",
+          "bullets": [
+            "Timeline and vendor management",
+            "Budget tracking",
+            "Rehearsal coordination",
+            "Day-of execution team"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "destinations",
+      "label": "Destinations",
+      "href": "/destinations/",
+      "kind": "section",
+      "heroTitle": "Destinations",
+      "description": "Explore our destination expertise across Thailand, Asia, Europe, the Middle East, and worldwide.",
+      "children": [
+        {
+          "id": "thailand",
+          "label": "Thailand",
+          "href": "/destinations/thailand/",
+          "heroTitle": "Thailand",
+          "description": "Deep local expertise across Bangkok, Chiang Mai, Phuket, Pattaya, Samui, and beyond.",
+          "bullets": [
+            "City, beach, and culture circuits",
+            "MICE and wedding venues",
+            "National park and island trips",
+            "Year-round operations"
+          ]
+        },
+        {
+          "id": "asia",
+          "label": "Asia",
+          "href": "/destinations/asia/",
+          "heroTitle": "Asia",
+          "description": "Regional Asia programs including Japan, Korea, Vietnam, Singapore, and more.",
+          "bullets": [
+            "Multi-country Asia tours",
+            "City break packages",
+            "Group series options",
+            "Local partner network"
+          ]
+        },
+        {
+          "id": "europe",
+          "label": "Europe",
+          "href": "/destinations/europe/",
+          "heroTitle": "Europe",
+          "description": "European leisure and group programs designed for Asian and Thailand-origin travelers.",
+          "bullets": [
+            "Classic Europe circuits",
+            "Switzerland and alpine itineraries",
+            "Seasonal highlights",
+            "Visa guidance support"
+          ]
+        },
+        {
+          "id": "middle-east",
+          "label": "Middle East",
+          "href": "/destinations/middle-east/",
+          "heroTitle": "Middle East",
+          "description": "Dubai and Middle East getaways with modern city and desert experiences.",
+          "bullets": [
+            "Dubai city packages",
+            "Desert safari add-ons",
+            "Family-friendly options",
+            "Stopover itineraries"
+          ]
+        },
+        {
+          "id": "worldwide",
+          "label": "Worldwide",
+          "href": "/destinations/worldwide/",
+          "heroTitle": "Worldwide",
+          "description": "Tailor-made worldwide travel through our partner network.",
+          "bullets": [
+            "Custom FIT worldwide",
+            "Special interest journeys",
+            "Honeymoon and luxury routes",
+            "Partner-operated destinations"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "articles",
+      "label": "Blog",
+      "href": "/articles/",
+      "kind": "link"
+    },
+    {
+      "id": "proposal",
+      "label": "Request a Proposal",
+      "href": "/proposal/",
+      "kind": "cta",
+      "heroTitle": "Request a Proposal",
+      "description": "Tell us about your group, MICE, wedding, or travel program — our partner desk will reply within one business day."
+    },
+    {
+      "id": "contact",
+      "label": "Contact Us",
+      "href": "/contact/",
+      "kind": "cta"
+    },
+    {
+      "id": "events",
+      "label": "Event Management",
+      "href": "/events/",
+      "kind": "section",
+      "heroTitle": "Event Management",
+      "description": "Gala dinners, award nights, product launches, themed parties, and full entertainment production.",
+      "children": [
+        {
+          "id": "gala-dinner",
+          "label": "Gala Dinner",
+          "href": "/events/gala-dinner/",
+          "heroTitle": "Gala Dinner",
+          "description": "Elegant gala dinners with staging, entertainment, and polished guest flow.",
+          "bullets": [
+            "Venue styling and décor",
+            "MC and entertainment lineup",
+            "Menu design and service",
+            "Run-of-show management"
+          ]
+        },
+        {
+          "id": "award-ceremonies",
+          "label": "Award Ceremonies",
+          "href": "/events/award-ceremonies/",
+          "heroTitle": "Award Ceremonies",
+          "description": "Award nights with precise cueing, lighting, and guest experience.",
+          "bullets": [
+            "Stage and AV direction",
+            "Trophy and gift logistics",
+            "VIP seating plans",
+            "Photo and media moments"
+          ]
+        },
+        {
+          "id": "annual-company-parties",
+          "label": "Annual Company Parties",
+          "href": "/events/annual-company-parties/",
+          "heroTitle": "Annual Company Parties",
+          "description": "Year-end and anniversary celebrations that feel festive and well-run.",
+          "bullets": [
+            "Theme concepts",
+            "Games and entertainment",
+            "Buffet or plated dining",
+            "Transportation planning"
+          ]
+        },
+        {
+          "id": "product-launches",
+          "label": "Product Launches",
+          "href": "/events/product-launches/",
+          "heroTitle": "Product Launches",
+          "description": "Launch events that spotlight your brand with impactful staging and hospitality.",
+          "bullets": [
+            "Concept and creative direction",
+            "Press and influencer hosting",
+            "Demo zones and sampling",
+            "After-party options"
+          ]
+        },
+        {
+          "id": "themed-events",
+          "label": "Themed Events",
+          "href": "/events/themed-events/",
+          "heroTitle": "Themed Events",
+          "description": "Immersive themed evenings — tropical, cultural, luxury, or fully custom.",
+          "bullets": [
+            "Set design and props",
+            "Costume and casting support",
+            "Custom F&B journeys",
+            "Photo installations"
+          ]
+        },
+        {
+          "id": "private-parties",
+          "label": "Private Parties",
+          "href": "/events/private-parties/",
+          "heroTitle": "Private Parties",
+          "description": "Private celebrations for executives, partners, and VIP guests.",
+          "bullets": [
+            "Intimate venue selection",
+            "Personal chef and butler options",
+            "Security and privacy planning",
+            "Bespoke entertainment"
+          ]
+        },
+        {
+          "id": "entertainment-production",
+          "label": "Entertainment & Production",
+          "href": "/events/entertainment-production/",
+          "heroTitle": "Entertainment & Production",
+          "description": "Show production, artists, dancers, bands, and technical crews under one desk.",
+          "bullets": [
+            "Artist booking",
+            "Choreography and rehearsals",
+            "Lighting and sound",
+            "Stage management"
+          ]
+        }
+      ],
+      "showInNav": false
+    },
+    {
+      "id": "india-market",
+      "label": "India Market",
+      "href": "/india-market/",
+      "kind": "section",
+      "heroTitle": "India Market",
+      "description": "Specialized India-market programs — groups, corporate, incentives, weddings, catering, and Hindi support.",
+      "children": [
+        {
+          "id": "indian-group-tours",
+          "label": "Indian Group Tours",
+          "href": "/india-market/indian-group-tours/",
+          "heroTitle": "Indian Group Tours",
+          "description": "Inbound group tours designed for Indian traveler preferences and pacing.",
+          "bullets": [
+            "Popular Thailand circuits",
+            "Vegetarian and Jain meal planning",
+            "Hindi / English guiding options",
+            "Shopping and temple inclusions"
+          ]
+        },
+        {
+          "id": "indian-corporate-groups",
+          "label": "Indian Corporate Groups",
+          "href": "/india-market/indian-corporate-groups/",
+          "heroTitle": "Indian Corporate Groups",
+          "description": "Corporate movements for Indian companies with clear SLAs and reporting.",
+          "bullets": [
+            "Conference + leisure blends",
+            "Invoice-ready documentation",
+            "Duty managers for large groups",
+            "Custom branding touchpoints"
+          ]
+        },
+        {
+          "id": "indian-incentive-travel",
+          "label": "Indian Incentive Travel",
+          "href": "/india-market/indian-incentive-travel/",
+          "heroTitle": "Indian Incentive Travel",
+          "description": "High-energy incentive programs tailored for Indian award winners and dealers.",
+          "bullets": [
+            "Gala and Bollywood-style nights",
+            "Beach and adventure options",
+            "Gift and surprise moments",
+            "End-to-end ops control"
+          ]
+        },
+        {
+          "id": "indian-wedding-services",
+          "label": "Indian Wedding Services",
+          "href": "/india-market/indian-wedding-services/",
+          "heroTitle": "Indian Wedding Services",
+          "description": "Destination wedding support for Indian ceremonies in Thailand.",
+          "bullets": [
+            "Mandap and décor coordination",
+            "Priest and ritual support referrals",
+            "Guest hospitality desks",
+            "Multi-event wedding timelines"
+          ]
+        },
+        {
+          "id": "indian-catering",
+          "label": "Indian Catering",
+          "href": "/india-market/indian-catering/",
+          "heroTitle": "Indian Catering",
+          "description": "Authentic Indian catering for groups, incentives, and wedding events.",
+          "bullets": [
+            "North and South Indian menus",
+            "Live counters and thali service",
+            "Jain / vegetarian / non-veg options",
+            "Large-banquet capacity"
+          ]
+        },
+        {
+          "id": "hindi-speaking-support",
+          "label": "Hindi-speaking Support",
+          "href": "/india-market/hindi-speaking-support/",
+          "heroTitle": "Hindi-speaking Support",
+          "description": "Hindi-speaking guides, hosts, and operations contacts for smoother guest care.",
+          "bullets": [
+            "Hindi-speaking tour leaders",
+            "Airport meet & greet",
+            "On-tour guest messaging",
+            "Escalation in preferred language"
+          ]
+        }
+      ],
+      "showInNav": false
+    },
+    {
+      "id": "gallery",
+      "label": "Gallery",
+      "href": "/gallery/",
+      "kind": "section",
+      "heroTitle": "Gallery",
+      "description": "Moments from our tours, MICE programs, events, and weddings.",
+      "children": [
+        {
+          "id": "tours",
+          "label": "Tours",
+          "href": "/gallery/tours/",
+          "heroTitle": "Tours Gallery",
+          "description": "Snapshots from leisure and group journeys across Thailand and beyond.",
+          "bullets": [
+            "Group departures",
+            "Private FIT moments",
+            "Scenic highlights",
+            "Guest experiences"
+          ],
+          "gallery": true
+        },
+        {
+          "id": "mice",
+          "label": "MICE",
+          "href": "/gallery/mice/",
+          "heroTitle": "MICE Gallery",
+          "description": "Meetings, incentives, and corporate gatherings delivered by our team.",
+          "bullets": [
+            "Conference setups",
+            "Incentive highlights",
+            "Team activities",
+            "Gala evenings"
+          ],
+          "gallery": true
+        },
+        {
+          "id": "events",
+          "label": "Events",
+          "href": "/gallery/events/",
+          "heroTitle": "Events Gallery",
+          "description": "Production stills from galas, launches, and themed celebrations.",
+          "bullets": [
+            "Stage and décor",
+            "Entertainment cues",
+            "Guest arrivals",
+            "Brand activations"
+          ],
+          "gallery": true
+        },
+        {
+          "id": "weddings",
+          "label": "Weddings",
+          "href": "/gallery/weddings/",
+          "heroTitle": "Weddings Gallery",
+          "description": "Ceremony and reception highlights from destination weddings in Thailand.",
+          "bullets": [
+            "Beach ceremonies",
+            "Ballroom receptions",
+            "Cultural rituals",
+            "Couple portraits"
+          ],
+          "gallery": true
+        }
+      ],
+      "showInNav": false
+    }
+  ]
+}

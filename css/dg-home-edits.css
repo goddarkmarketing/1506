@@ -20,6 +20,23 @@
   --dg-hero-bottom-fade-h: 9%;
 }
 
+/* Kill page-level horizontal scrollbar (100vw / breakout leftovers) */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+#__next {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+/* Hide language / currency selector (THB | TH) for now */
+[data-testid="language-currency-dropdown"],
+[data-testid="language-currency-header"] {
+  display: none !important;
+}
+
 /* ===== Tour search overlap rail (between hero and WHY) ===== */
 .dg-tour-overlap {
   position: relative;
@@ -55,11 +72,11 @@
   min-height: 0 !important;
   overflow: hidden !important;
 }
-/* Hero tucks under full sticky header (nav + marquee) */
+/* Hero sits below solid white sticky header (nav + marquee) */
 #__next > .css-1dbjc4n.r-13awgt0 > .r-tqpus0,
 #navbar-offset + .r-tqpus0,
 .css-1dbjc4n.r-6koalj.r-1wtj0ep.r-bnwqim.r-13qz1uu.r-tqpus0 {
-  margin-top: calc(-1 * var(--dg-header-stack, 108px)) !important;
+  margin-top: 0 !important;
   position: relative !important;
   z-index: 10 !important;
   display: flex !important;
@@ -183,15 +200,15 @@
   content: none !important;
   display: none !important;
 }
-/* Align sticky header rail with page content (1222px + 14px gutters) */
+/* Align sticky header rail — balanced width for consolidated menu */
 .r-bztko3 .r-18u37iz.r-1wtj0ep.r-xd6kpl,
 .r-bztko3 .r-18u37iz.r-1wtj0ep.r-xd6kpl.r-17yavnb {
-  width: 1222px !important;
+  width: min(1280px, calc(100% - 32px)) !important;
   max-width: 100% !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  padding-left: 14px !important;
-  padding-right: 14px !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
   box-sizing: border-box !important;
 }
 .r-bztko3 .r-adacv.r-82yag {
@@ -563,12 +580,12 @@
   line-height: 1.65;
 }
 
-/* Destinations + Why band — flush directly under hero */
+/* Destinations + Why band — flush directly under hero
+   Use 100% (not 100vw) to avoid horizontal scrollbar from scrollbar gutter. */
 .dg-dest-band {
-  width: 100vw;
-  max-width: 100vw;
+  width: 100%;
+  max-width: 100%;
   margin: 0;
-  margin-left: calc(50% - 50vw);
   margin-top: 0 !important;
   padding: 48px 0 0;
   box-sizing: border-box;
@@ -775,15 +792,15 @@
 
 /* Dream trip + About teaser (after Why panel) */
 .dg-story {
-  width: 100vw;
-  max-width: 100vw;
+  width: 100%;
+  max-width: 100%;
   margin: 0 0 40px;
-  margin-left: calc(50% - 50vw);
   font-family: "Better Together", "Godwit", sans-serif;
   color: #1C2127;
   position: relative;
   z-index: 2;
   box-sizing: border-box;
+  overflow-x: clip;
 }
 .dg-story__panel {
   position: relative;
@@ -1891,15 +1908,15 @@
 
 /* ===== Partner Inquiry (B2B form) ===== */
 .dg-partner {
-  width: 100vw;
-  max-width: 100vw;
+  width: 100%;
+  max-width: 100%;
   margin: clamp(24px, 3.5vw, 40px) 0 0;
-  margin-left: calc(50% - 50vw);
   font-family: "Better Together", "Godwit", sans-serif;
   color: #1C2127;
   position: relative;
   z-index: 2;
   box-sizing: border-box;
+  overflow-x: clip;
 }
 .dg-partner__panel {
   position: relative;

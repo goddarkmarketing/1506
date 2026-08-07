@@ -1,0 +1,160 @@
+/* Destination Weddings — landing-page romance on shared DMC system
+   Soft blush · navy · gold · Lucide wells · cinematic media
+   Load after css/dg-travel-service.css */
+
+.dg-wd {
+  --wd-blush: #f7f3ee;
+  --wd-blush-deep: #efe8df;
+  --wd-ink: var(--ts-ink, #12151a);
+  --wd-navy: var(--ts-navy, #0b2e59);
+  --wd-gold: var(--ts-gold, #b8954a);
+  --wd-gold-deep: var(--ts-gold-deep, #8f7134);
+  --wd-gold-soft: rgba(184, 149, 74, 0.14);
+}
+
+/* Landing promise strip */
+.dg-wd-promise {
+  padding: 28px 0 8px;
+  background:
+    radial-gradient(ellipse 60% 80% at 50% 0%, var(--wd-gold-soft), transparent 60%),
+    var(--ts-paper, #fff);
+}
+
+.dg-wd-promise__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.dg-wd-promise__item {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 14px;
+  align-items: center;
+  min-height: 88px;
+  padding: 18px 20px;
+  background: var(--wd-blush);
+  border: 1px solid var(--ts-line, #e8e2d8);
+  border-radius: 16px;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dg-wd-promise__item:hover {
+  transform: translateY(-3px);
+  border-color: rgba(184, 149, 74, 0.45);
+  background: #fff;
+  box-shadow: 0 16px 36px rgba(11, 46, 89, 0.08);
+}
+
+.dg-wd-promise__item strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--wd-navy);
+}
+
+.dg-wd-promise__item span {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--ts-mute, #5a6570);
+  font-weight: 500;
+}
+
+/* Soft landing surfaces */
+.dg-ts.dg-wd .dg-ts-overview {
+  background:
+    radial-gradient(ellipse 50% 40% at 100% 10%, var(--wd-gold-soft), transparent 55%),
+    var(--ts-paper, #fff) !important;
+}
+
+.dg-ts.dg-wd .dg-ts-highlights,
+.dg-ts.dg-wd .dg-ts-included,
+.dg-ts.dg-wd .dg-ts-gallery,
+.dg-ts.dg-wd .dg-ts-related,
+.dg-ts.dg-wd .dg-ts-hub {
+  background: linear-gradient(180deg, var(--wd-blush) 0%, var(--wd-blush-deep) 100%) !important;
+}
+
+.dg-ts.dg-wd .dg-ts-why,
+.dg-ts.dg-wd .dg-ts-steps,
+.dg-ts.dg-wd .dg-ts-faq {
+  background: var(--ts-paper, #fff) !important;
+}
+
+.dg-ts.dg-wd .dg-ts-why__item,
+.dg-ts.dg-wd .dg-ts-step {
+  background: var(--wd-blush);
+}
+
+.dg-ts.dg-wd .dg-ts-why__item:hover,
+.dg-ts.dg-wd .dg-ts-step:hover {
+  background: #fff;
+}
+
+.dg-ts.dg-wd .dg-ts-trust li {
+  background: var(--wd-blush);
+}
+
+.dg-ts.dg-wd .dg-ts-trust li:hover {
+  background: #fff;
+}
+
+/* Cinematic overview media */
+.dg-ts.dg-wd .dg-ts-overview__media {
+  border-radius: 8px;
+  box-shadow: 0 28px 70px rgba(11, 46, 89, 0.14);
+}
+
+.dg-ts.dg-wd .dg-ts-overview__media img {
+  object-position: center 28%;
+}
+
+/* Package cards — softer landing feel */
+.dg-ts.dg-wd .dg-wd-card {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.dg-ts.dg-wd .dg-wd-card .dg-ts-card__media {
+  aspect-ratio: 5 / 4;
+}
+
+.dg-ts.dg-wd .dg-wd-card:hover {
+  box-shadow: 0 22px 48px rgba(11, 46, 89, 0.12);
+}
+
+/* Gallery more editorial */
+.dg-ts.dg-wd .dg-ts-gallery__item {
+  border-radius: 18px;
+}
+
+.dg-ts.dg-wd .dg-ts-gallery__item:nth-child(1) {
+  aspect-ratio: 16 / 10;
+}
+
+/* CTA stays navy — wedding accent on eyebrow already gold */
+.dg-ts.dg-wd .dg-ts-cta__panel {
+  background: linear-gradient(135deg, #0b2e59 0%, #132a45 48%, #0f2238 100%);
+}
+
+.dg-ts.dg-wd .dg-page-hero--beige {
+  background:
+    radial-gradient(ellipse 70% 60% at 80% 0%, rgba(184, 149, 74, 0.12), transparent 55%),
+    linear-gradient(180deg, #f7f3ee 0%, #f3eee7 100%);
+}
+
+@media (max-width: 900px) {
+  .dg-wd-promise__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dg-wd-promise__item {
+    transition: none;
+  }
+}

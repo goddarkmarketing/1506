@@ -657,12 +657,217 @@
   .dg-pc-cats,
   .dg-pc-membership__grid,
   .dg-pc-certs__grid,
-  .dg-pc-why__grid {
+  .dg-pc-why__grid,
+  .dg-pc-logo-grid,
+  .dg-pc-docs {
     grid-template-columns: 1fr;
+  }
+
+  .dg-pc-proof {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .dg-pc-proof figure,
+  .dg-pc-proof__hero {
+    min-height: 220px;
+  }
+
+  .dg-pc-logo-grid--photos img {
+    height: 240px;
   }
 
   .dg-pc-section-head h2 {
     white-space: normal;
+  }
+}
+
+/* Partner photos — real agency welcome boards */
+.dg-pc-logos {
+  padding: var(--pc-section-md) 0;
+  background: var(--pc-mist);
+}
+
+.dg-pc-logo-grid {
+  list-style: none;
+  margin: 36px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.dg-pc-logo-grid--photos li {
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid var(--pc-line);
+  box-shadow: 0 12px 28px rgba(11, 46, 89, 0.06);
+}
+
+.dg-pc-logo-grid--photos figure {
+  margin: 0;
+}
+
+.dg-pc-logo-grid--photos img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: center 28%;
+  display: block;
+}
+
+.dg-pc-logo-grid--photos figcaption {
+  padding: 14px 16px 16px;
+}
+
+.dg-pc-logo-grid--photos strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--pc-navy);
+}
+
+.dg-pc-logo-grid--photos span {
+  display: block;
+  margin-top: 3px;
+  font-size: 12.5px;
+  color: var(--pc-mute);
+  font-weight: 500;
+}
+
+/* Official license scans */
+.dg-pc-docs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 36px 0 40px;
+}
+
+.dg-pc-doc {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--pc-line);
+  box-shadow: 0 12px 28px rgba(11, 46, 89, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dg-pc-doc:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(11, 46, 89, 0.12);
+}
+
+.dg-pc-doc__frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  padding: 18px 16px;
+  background:
+    linear-gradient(180deg, #fbf8f2 0%, #f3eee5 100%);
+}
+
+.dg-pc-doc__frame img {
+  width: 100%;
+  height: 280px;
+  object-fit: contain;
+  display: block;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(18, 21, 26, 0.08);
+}
+
+.dg-pc-doc__meta {
+  display: grid;
+  gap: 4px;
+  padding: 14px 16px 16px;
+}
+
+.dg-pc-doc__meta strong {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--pc-navy);
+}
+
+.dg-pc-doc__meta span {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--pc-mute);
+  font-weight: 500;
+}
+
+/* Guest proof mosaic */
+.dg-pc-reviews {
+  padding: var(--pc-section-md) 0 var(--pc-section);
+  background: var(--pc-mist);
+}
+
+.dg-pc-proof {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 1fr;
+  grid-template-rows: 220px 220px;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+.dg-pc-proof figure {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #1a1408;
+}
+
+.dg-pc-proof__hero {
+  grid-row: 1 / span 2;
+}
+
+.dg-pc-proof img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.dg-pc-proof figure:hover img {
+  transform: scale(1.04);
+}
+
+.dg-pc-proof figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 28px 14px 12px;
+  background: linear-gradient(180deg, transparent, rgba(11, 31, 51, 0.78));
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 900px) {
+  .dg-pc-logo-grid,
+  .dg-pc-docs {
+    grid-template-columns: 1fr;
+  }
+
+  .dg-pc-proof {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 240px 180px 180px;
+  }
+
+  .dg-pc-proof__hero {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    min-height: 240px;
   }
 }
 

@@ -75,7 +75,7 @@ const PAGE_CHROME = {
     reveal: ".dg-ot-reveal",
   },
   "partners-certifications": {
-    css: ["css/dg-partners.css?v=2"],
+    css: ["css/dg-partners.css?v=4"],
     reveal: ".dg-pc-reveal",
   },
 };
@@ -145,9 +145,10 @@ function chromeCss(depth, extraCss = []) {
 <link rel="stylesheet" href="${rel(depth, "css/dg-chrome.css")}" />
 <link rel="stylesheet" href="${rel(depth, "css/dg-home-edits.css")}?v=ia2" />
 <link rel="stylesheet" href="${rel(depth, "css/dg-ia-pages.css")}?v=13" />
-<link rel="stylesheet" href="${rel(depth, "css/dg-mega-menu.css")}?v=2" />
+<link rel="stylesheet" href="${rel(depth, "css/dg-mega-menu.css")}?v=9" />
 <link rel="stylesheet" href="${rel(depth, "css/dg-page-hero.css")}?v=2" />
 <link rel="stylesheet" href="${rel(depth, "css/dg-internal-system.css")}?v=3" />
+<link rel="stylesheet" href="${rel(depth, "css/dg-mobile.css")}?v=5" />
 `.trim();
   const extras = (extraCss || [])
     .map((href) => `<link rel="stylesheet" href="${rel(depth, href)}" />`)
@@ -162,6 +163,7 @@ function megaPanelSize(count) {
 }
 
 function megaNavHtml(depth) {
+  const FEATURED = 6;
   const items = nav.items
     .filter((item) => item.showInNav !== false && item.kind !== "cta")
     .map((item) => {
@@ -170,7 +172,8 @@ function megaNavHtml(depth) {
       if (!megaKids.length) {
         return `<a class="dg-mega__link" href="${href}">${esc(item.label)}</a>`;
       }
-      const kids = megaKids
+      const featured = megaKids.slice(0, FEATURED);
+      const kids = featured
         .map(
           (c) =>
             `<li><a href="${pageHref(c.href, depth)}">${esc(c.label)}</a></li>`
@@ -178,7 +181,10 @@ function megaNavHtml(depth) {
         .join("");
       const size = megaPanelSize(megaKids.length);
       return `<div class="dg-mega__item">
-  <a class="dg-mega__link" href="${href}">${esc(item.label)} <span class="dg-mega__caret" aria-hidden="true">▾</span></a>
+  <div class="dg-mega__row">
+    <a class="dg-mega__link" href="${href}">${esc(item.label)}</a>
+    <button type="button" class="dg-mega__expand" aria-expanded="false" aria-label="Show ${esc(item.label)} links"><span aria-hidden="true">▾</span></button>
+  </div>
   <div class="dg-mega__panel dg-mega__panel--${size}">
     <div class="dg-mega__panel-card">
       <a class="dg-mega__panel-all" href="${href}">View all ${esc(item.label)}</a>
@@ -192,7 +198,24 @@ function megaNavHtml(depth) {
   return `<nav class="dg-mega" aria-label="Primary">
 <button type="button" class="dg-mega__toggle" aria-expanded="false" aria-controls="dg-mega-drawer">Menu</button>
 <div class="dg-mega__desktop">${items}</div>
-<div class="dg-mega__drawer" id="dg-mega-drawer" hidden>${items}</div>
+<div class="dg-mega__backdrop" id="dg-mega-backdrop" hidden></div>
+<div class="dg-mega__drawer" id="dg-mega-drawer" hidden>
+  <div class="dg-mega__sheet-head">
+    <a class="dg-mega__brand" href="${pageHref("/", depth)}" aria-label="D&amp;G Holiday">
+      <img src="${rel(depth, "images/dg-logo.png")}?v=10" alt="D&amp;G Holiday (Thailand) Co., Ltd." width="180" height="48" decoding="async" />
+    </a>
+    <button type="button" class="dg-mega__sheet-close" aria-label="Close menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+  </div>
+  <div class="dg-mega__sheet-body">
+${items}
+  </div>
+  <div class="dg-mega__sheet-foot">
+    <a class="dg-mega__auth-btn dg-mega__auth-btn--login" href="#" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" x2="3" y1="12" y2="12"/></svg> Log In</a>
+    <a class="dg-mega__auth-btn dg-mega__auth-btn--signup" href="#" role="button">Sign Up</a>
+  </div>
+</div>
 </nav>`;
 }
 
@@ -241,10 +264,36 @@ function paymentImgs(depth) {
     .join("\n          ");
 }
 
+function ctaDockHtml(depth) {
+  return `<nav class="dg-cta-dock" aria-label="Quick contact">
+  <a href="${pageHref("/", depth)}">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Home</span>
+  </a>
+  <a href="https://page.line.me/354ejhoo" target="_blank" rel="noopener noreferrer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <span>LINE</span>
+  </a>
+  <a href="https://wa.me/66821479553?text=Hello%20D%26G%20Holiday%2C%20I%20would%20like%20a%20quote." target="_blank" rel="noopener noreferrer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span>WhatsApp</span>
+  </a>
+  <a href="${pageHref("/proposal/", depth)}">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+    <span>Quote</span>
+  </a>
+  <a href="tel:+66821479553">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span>Call</span>
+  </a>
+</nav>`;
+}
+
 function footerHtml(depth) {
   const L = (h, label) =>
     `<li><a href="${pageHref(h, depth)}">${esc(label)}</a></li>`;
-  return `<footer class="dg-chrome-footer">
+  return `${ctaDockHtml(depth)}
+<footer class="dg-chrome-footer">
   <div class="dg-chrome-footer__inner">
     <div class="dg-chrome-footer__grid">
       <div>
@@ -419,31 +468,91 @@ function megaInitScript() {
   return `(function(){
   var btn=document.querySelector('.dg-mega__toggle');
   var drawer=document.getElementById('dg-mega-drawer');
-  if(btn&&drawer){
-    btn.addEventListener('click',function(){
-      var open=btn.getAttribute('aria-expanded')==='true';
-      btn.setAttribute('aria-expanded', open?'false':'true');
-      drawer.hidden=open;
-      if(open){
-        drawer.querySelectorAll('.dg-mega__item.is-open').forEach(function(n){ n.classList.remove('is-open'); });
-      }
+  var backdrop=document.getElementById('dg-mega-backdrop');
+  function isMobileNav(){ return window.matchMedia('(max-width: 1100px)').matches; }
+
+  function closeAllSubs(){
+    drawer.querySelectorAll('.dg-mega__item.is-open').forEach(function(n){
+      n.classList.remove('is-open');
+      var exp=n.querySelector('.dg-mega__expand');
+      if(exp) exp.setAttribute('aria-expanded','false');
     });
   }
-  function isMobileNav(){ return window.matchMedia('(max-width: 1100px)').matches; }
+
+  var closeBtn=document.querySelector('.dg-mega__sheet-close');
+  var closeTimer=null;
+
+  function setOpen(open){
+    if(!btn||!drawer) return;
+    btn.setAttribute('aria-expanded', open?'true':'false');
+    btn.classList.toggle('is-active', !!open);
+    document.documentElement.classList.toggle('dg-mega-open', !!open);
+    document.body.classList.toggle('dg-mega-open', !!open);
+    if(closeTimer){ clearTimeout(closeTimer); closeTimer=null; }
+    if(open){
+      drawer.hidden=false;
+      if(backdrop) backdrop.hidden=false;
+      requestAnimationFrame(function(){
+        requestAnimationFrame(function(){
+          drawer.classList.add('is-open');
+          if(backdrop) backdrop.classList.add('is-open');
+        });
+      });
+    } else {
+      drawer.classList.remove('is-open');
+      if(backdrop) backdrop.classList.remove('is-open');
+      closeAllSubs();
+      closeTimer=setTimeout(function(){
+        drawer.hidden=true;
+        if(backdrop) backdrop.hidden=true;
+      }, 280);
+    }
+  }
+
+  if(btn&&drawer){
+    btn.addEventListener('click',function(){
+      setOpen(btn.getAttribute('aria-expanded')!=='true');
+    });
+  }
+  if(backdrop){
+    backdrop.addEventListener('click',function(){ setOpen(false); });
+  }
+  if(closeBtn){
+    closeBtn.addEventListener('click',function(){ setOpen(false); });
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') setOpen(false);
+  });
+
+  /* Individual accordion toggle — label or chevron */
   document.querySelectorAll('.dg-mega__drawer .dg-mega__item').forEach(function(item){
-    var link=item.querySelector(':scope > .dg-mega__link');
-    var panel=item.querySelector(':scope > .dg-mega__panel');
-    if(!link||!panel) return;
-    link.addEventListener('click',function(e){
+    var row=item.querySelector(':scope > .dg-mega__row');
+    var expand=item.querySelector(':scope > .dg-mega__row > .dg-mega__expand');
+    var link=item.querySelector(':scope > .dg-mega__row > .dg-mega__link');
+    if(!expand||!link) return;
+    function toggle(e){
       if(!isMobileNav()) return;
       e.preventDefault();
-      var open=item.classList.contains('is-open');
-      item.parentElement.querySelectorAll('.dg-mega__item.is-open').forEach(function(n){
-        if(n!==item) n.classList.remove('is-open');
+      e.stopPropagation();
+      var isOpen=item.classList.contains('is-open');
+      drawer.querySelectorAll('.dg-mega__item.is-open').forEach(function(n){
+        if(n===item) return;
+        n.classList.remove('is-open');
+        var other=n.querySelector(':scope > .dg-mega__row > .dg-mega__expand');
+        if(other) other.setAttribute('aria-expanded','false');
       });
-      item.classList.toggle('is-open', !open);
+      item.classList.toggle('is-open', !isOpen);
+      expand.setAttribute('aria-expanded', (!isOpen)?'true':'false');
+    }
+    expand.addEventListener('click', toggle);
+    link.addEventListener('click', toggle);
+    if(row) row.addEventListener('click', function(e){
+      if(!isMobileNav()) return;
+      if(e.target.closest('a,button')) return;
+      toggle(e);
     });
   });
+
   var header=document.querySelector('.r-bztko3.r-ipm5af.r-fgfhv.r-8ny0jo')
     || document.querySelector('.r-bztko3.r-ipm5af.r-fgfhv');
   if(header){
@@ -522,7 +631,7 @@ if (megaNavOpen >= 0) {
 if (!index.includes("dg-ia-pages.css")) {
   index = index.replace(
     /href="css\/dg-home-edits\.css\?v=[^"]+"/,
-    (m) => `${m} /><link rel="stylesheet" href="css/dg-ia-pages.css?v=13" /><link rel="stylesheet" href="css/dg-mega-menu.css?v=2"`
+    (m) => `${m} /><link rel="stylesheet" href="css/dg-ia-pages.css?v=13" /><link rel="stylesheet" href="css/dg-mega-menu.css?v=9"`
   );
 } else {
   index = index.replace(/dg-ia-pages\.css\?v=\d+/g, "dg-ia-pages.css?v=13");
@@ -530,10 +639,19 @@ if (!index.includes("dg-ia-pages.css")) {
 if (!index.includes("dg-mega-menu.css")) {
   index = index.replace(
     /href="css\/dg-ia-pages\.css\?v=[^"]+"/,
-    (m) => `${m} /><link rel="stylesheet" href="css/dg-mega-menu.css?v=2"`
+    (m) => `${m} /><link rel="stylesheet" href="css/dg-mega-menu.css?v=9"`
   );
 } else {
-  index = index.replace(/dg-mega-menu\.css\?v=\d+/g, "dg-mega-menu.css?v=2");
+  index = index.replace(/dg-mega-menu\.css\?v=\d+/g, "dg-mega-menu.css?v=9");
+}
+
+if (!index.includes("dg-mobile.css")) {
+  index = index.replace(
+    /(<link rel="stylesheet" href="css\/dg-destinations\.css\?v=\d+" \/>)/,
+    '$1<link rel="stylesheet" href="css/dg-mobile.css?v=5" />'
+  );
+} else {
+  index = index.replace(/dg-mobile\.css\?v=\d+/g, "dg-mobile.css?v=5");
 }
 
 const megaJs = `<script id="dg-mega-toggle-js">${megaInitScript()}</script>`;
@@ -768,10 +886,11 @@ ${renderPageCta({
 
 // Proposal page
 const proposalDepth = 1;
+const DESK_CHROME = { css: ["css/dg-contact-pages.css?v=5"], reveal: ".dg-ts-reveal" };
 const proposalBody = `${renderPageHero({
   title: "Request a Proposal",
   subtitle:
-    "Tell us about your travel, MICE, event, India-market, or wedding program. Our partner desk replies within one business day.",
+    "Share your travel, MICE, event, India-market, or wedding brief. Our partner desk replies within one business day.",
   breadcrumb: [
     { label: "Home", href: "index.html" },
     { label: "Request a Proposal" },
@@ -780,33 +899,80 @@ const proposalBody = `${renderPageHero({
   secondaryButton: { label: "Contact Us", href: "contact/" },
   rel: "../",
 })}
-<section class="dg-ia-wrap">
-  <form class="dg-ia-form" id="dg-proposal-form" action="mailto:partners@dgholidaythailand.com" method="get">
-    <div class="dg-ia-form__grid">
-      <label>Company / Agency<input name="company" required placeholder="Agency or company name" /></label>
-      <label>Contact Name<input name="name" required placeholder="Full name" /></label>
-      <label>Work Email<input type="email" name="email" required placeholder="name@company.com" /></label>
-      <label>Phone / WhatsApp<input name="phone" placeholder="+66 XX XXX XXXX" /></label>
-      <label>Service Interest
-        <select name="service" required>
-          <option value="">Select a service</option>
-          <option>Travel Services</option>
-          <option>MICE &amp; Corporate</option>
-          <option>Event Management</option>
-          <option>India Market</option>
-          <option>Destination Weddings</option>
-          <option>Other</option>
-        </select>
-      </label>
-      <label>Estimated Group Size<input name="group_size" placeholder="e.g. 40 pax" /></label>
-      <label>Travel / Event Dates<input name="dates" placeholder="e.g. Oct 2026" /></label>
-      <label>Destination<input name="destination" placeholder="e.g. Bangkok, Phuket" /></label>
+<article class="dg-desk">
+  <section class="dg-desk-main" aria-labelledby="dg-desk-proposal-title">
+    <div class="dg-desk__wrap">
+      <div class="dg-desk-main__layout">
+        <aside class="dg-desk-aside">
+          <p class="dg-desk__eyebrow">Partner Desk</p>
+          <h2 id="dg-desk-proposal-title" class="dg-desk__title">Tell us the brief. We shape the program.</h2>
+          <p class="dg-desk__lead">Clear inputs help us return a practical quotation — dates, group size, destination, and service focus.</p>
+          <ol class="dg-desk-steps" aria-label="How proposal requests work">
+            <li>
+              <span class="dg-desk-steps__num" aria-hidden="true">1</span>
+              <div><strong>Share the essentials</strong><span>Company, contacts, service type, and dates.</span></div>
+            </li>
+            <li>
+              <span class="dg-desk-steps__num" aria-hidden="true">2</span>
+              <div><strong>We review within 1 business day</strong><span>Our desk checks inventory, venues, and logistics.</span></div>
+            </li>
+            <li>
+              <span class="dg-desk-steps__num" aria-hidden="true">3</span>
+              <div><strong>Receive a tailored proposal</strong><span>Options, inclusions, and next steps for booking.</span></div>
+            </li>
+          </ol>
+          <div class="dg-desk-quick" aria-label="Prefer chat">
+            <a href="https://page.line.me/354ejhoo" target="_blank" rel="noopener noreferrer">
+              <span class="dg-desk-quick__ico" aria-hidden="true"><img src="../images/social/line-app.png?v=1" alt="" width="36" height="36" /></span>
+              <span><strong>LINE @dgholiday</strong><span>Official Account chat</span></span>
+            </a>
+            <a href="https://wa.me/66821479553?text=Hello%20D%26G%20Holiday%2C%20I%20would%20like%20a%20proposal." target="_blank" rel="noopener noreferrer">
+              <span class="dg-desk-quick__ico" aria-hidden="true"><img src="../images/social/whatsapp-app.png?v=1" alt="" width="36" height="36" /></span>
+              <span><strong>WhatsApp</strong><span>+66 82 147 9553</span></span>
+            </a>
+            <a href="tel:+66821479553">
+              <span class="dg-desk-quick__ico" aria-hidden="true"><i data-lucide="phone" class="dg-lucide"></i></span>
+              <span><strong>Call Desk</strong><span>Mon – Fri, 9:00 – 18:00</span></span>
+            </a>
+          </div>
+        </aside>
+        <form class="dg-desk-form" id="dg-proposal-form" action="mailto:partners@dgholidaythailand.com" method="get">
+          <div class="dg-desk-form__head">
+            <h2>Proposal form</h2>
+            <p>Fields marked required help us quote accurately the first time.</p>
+          </div>
+          <div class="dg-desk-form__grid">
+            <label>Company / Agency<input name="company" required placeholder="Agency or company name" autocomplete="organization" /></label>
+            <label>Contact Name<input name="name" required placeholder="Full name" autocomplete="name" /></label>
+            <label>Work Email<input type="email" name="email" required placeholder="name@company.com" autocomplete="email" /></label>
+            <label>Phone / WhatsApp<input name="phone" placeholder="+66 XX XXX XXXX" autocomplete="tel" /></label>
+            <label>Service Interest
+              <select name="service" required>
+                <option value="">Select a service</option>
+                <option>Travel Services</option>
+                <option>MICE &amp; Corporate</option>
+                <option>Event Management</option>
+                <option>India Market</option>
+                <option>Destination Weddings</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label>Estimated Group Size<input name="group_size" placeholder="e.g. 40 pax" /></label>
+            <label>Travel / Event Dates<input name="dates" placeholder="e.g. Oct 2026" /></label>
+            <label>Destination<input name="destination" placeholder="e.g. Bangkok, Phuket" /></label>
+          </div>
+          <label class="dg-desk-form__full">Project Details<textarea name="body" rows="5" required placeholder="Goals, budget range, and any special requirements"></textarea></label>
+          <input type="hidden" name="subject" value="Proposal Request" />
+          <div class="dg-desk-form__actions">
+            <button type="submit" class="dg-desk-btn dg-desk-btn--primary">Send Inquiry <span aria-hidden="true">→</span></button>
+            <a class="dg-desk-btn dg-desk-btn--ghost" href="../contact/">Talk to Contact Desk</a>
+          </div>
+          <p class="dg-desk-form__note" style="margin-top:14px">Submitting opens your email client with the brief ready to send to our partner desk.</p>
+        </form>
+      </div>
     </div>
-    <label class="dg-ia-form__full">Project Details<textarea name="body" rows="5" required placeholder="Goals, budget range, and any special requirements"></textarea></label>
-    <input type="hidden" name="subject" value="Proposal Request" />
-    <button type="submit" class="dg-ia-btn dg-ia-btn--primary">Send Inquiry →</button>
-  </form>
-</section>
+  </section>
+</article>
 ${renderPageCta({
   rel: "../",
   variant: "dg-page",
@@ -824,46 +990,163 @@ writePage(
     description: nav.items.find((i) => i.id === "proposal")?.description,
     depth: proposalDepth,
     body: proposalBody,
+    extraCss: DESK_CHROME.css,
+    extraScript: revealScript(DESK_CHROME.reveal),
   })
 );
 count++;
 
-// Contact + articles folder indexes that redirect/link for Pages
-function stubFolder(name, title, nextHint, heroOpts = {}) {
-  const depth = 1;
-  const body = `${renderPageHero({
-    title,
-    subtitle: nextHint,
-    breadcrumb: [
-      { label: "Home", href: "index.html" },
-      { label: title },
-    ],
-    rel: "../",
-    ...heroOpts,
-  })}
+// Contact page
+const contactDepth = 1;
+const contactBody = `${renderPageHero({
+  title: "Contact Us",
+  subtitle: "Reach the D&G Holiday partner desk by phone, email, LINE, or WhatsApp — we reply within one business day.",
+  breadcrumb: [
+    { label: "Home", href: "index.html" },
+    { label: "Contact Us" },
+  ],
+  rel: "../",
+  primaryButton: { label: "Request A Proposal", href: "proposal/" },
+  secondaryButton: { label: "Back to Home", href: "index.html" },
+})}
+<article class="dg-desk">
+  <section class="dg-desk-channels" aria-labelledby="dg-desk-channels-title">
+    <div class="dg-desk__wrap">
+      <p class="dg-desk__eyebrow">Direct Channels</p>
+      <h2 id="dg-desk-channels-title" class="dg-desk__title">Choose how you want to reach us</h2>
+      <div class="dg-desk-channels__grid" style="margin-top:28px">
+        <a class="dg-desk-channel" href="tel:+66821479553">
+          <span class="dg-desk-channel__ico" aria-hidden="true"><i data-lucide="phone" class="dg-lucide"></i></span>
+          <strong>Call</strong>
+          <span>Speak with our Bangkok desk during business hours.</span>
+          <em>+66 82 147 9553</em>
+        </a>
+        <a class="dg-desk-channel" href="mailto:dgholidaythailand@gmail.com">
+          <span class="dg-desk-channel__ico" aria-hidden="true"><i data-lucide="mail" class="dg-lucide"></i></span>
+          <strong>Email</strong>
+          <span>Send program details and documents anytime.</span>
+          <em>dgholidaythailand@gmail.com</em>
+        </a>
+        <a class="dg-desk-channel" href="https://page.line.me/354ejhoo" target="_blank" rel="noopener noreferrer">
+          <span class="dg-desk-channel__ico" aria-hidden="true"><img src="../images/social/line-app.png?v=1" alt="" width="44" height="44" /></span>
+          <strong>LINE</strong>
+          <span>Chat with our Official Account for quick replies.</span>
+          <em>@dgholiday</em>
+        </a>
+        <a class="dg-desk-channel" href="https://wa.me/66821479553?text=Hello%20D%26G%20Holiday%2C%20I%20would%20like%20assistance." target="_blank" rel="noopener noreferrer">
+          <span class="dg-desk-channel__ico" aria-hidden="true"><img src="../images/social/whatsapp-app.png?v=1" alt="" width="44" height="44" /></span>
+          <strong>WhatsApp</strong>
+          <span>Message our desk for itineraries and quotations.</span>
+          <em>+66 82 147 9553</em>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="dg-desk-office" aria-labelledby="dg-desk-office-title">
+    <div class="dg-desk__wrap">
+      <div class="dg-desk-office__layout">
+        <div class="dg-desk-office__card">
+          <p class="dg-desk__eyebrow">Office</p>
+          <h2 id="dg-desk-office-title">Bangkok operations desk</h2>
+          <ul class="dg-desk-office__meta">
+            <li>
+              <span class="dg-desk-quick__ico" aria-hidden="true"><i data-lucide="map-pin" class="dg-lucide"></i></span>
+              <div>
+                <strong>Address</strong>
+                <span>852/7 Pruksa Ville 60/2, Luang Phaeng Rd,<br />Thap Yao, Lat Krabang, Bangkok 10520</span>
+              </div>
+            </li>
+            <li>
+              <span class="dg-desk-quick__ico" aria-hidden="true"><i data-lucide="clock" class="dg-lucide"></i></span>
+              <div>
+                <strong>Hours</strong>
+                <span>Monday – Friday, 09:00 – 18:00 (ICT)</span>
+              </div>
+            </li>
+            <li>
+              <span class="dg-desk-quick__ico" aria-hidden="true"><i data-lucide="badge-check" class="dg-lucide"></i></span>
+              <div>
+                <strong>Credentials</strong>
+                <span>Tourism Business License 11/12868 · ATTA 05614</span>
+              </div>
+            </li>
+          </ul>
+          <div class="dg-desk-form__actions" style="margin-top:22px">
+            <a class="dg-desk-btn dg-desk-btn--primary" href="../proposal/">Request a Quote</a>
+            <a class="dg-desk-btn dg-desk-btn--ghost" href="https://www.facebook.com/dgholidaythailand" target="_blank" rel="noopener noreferrer">Facebook</a>
+          </div>
+        </div>
+        <figure class="dg-desk-office__media">
+          <img src="../images/services/business-meeting.jpg" alt="D&amp;G Holiday partner desk" width="900" height="700" loading="lazy" decoding="async" />
+          <figcaption>Partner desk for agencies, corporates, MICE, and destination weddings.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="dg-desk-main" aria-labelledby="dg-desk-contact-form-title" style="padding-top:8px">
+    <div class="dg-desk__wrap">
+      <div class="dg-desk-main__layout">
+        <aside class="dg-desk-aside">
+          <p class="dg-desk__eyebrow">Message Us</p>
+          <h2 id="dg-desk-contact-form-title" class="dg-desk__title">Send a short note</h2>
+          <p class="dg-desk__lead">For a full MICE or wedding quotation, use the proposal form. For general questions, this note is enough.</p>
+        </aside>
+        <form class="dg-desk-form" id="dg-contact-form" action="mailto:dgholidaythailand@gmail.com" method="get">
+          <div class="dg-desk-form__head">
+            <h2>Contact form</h2>
+            <p>We reply within one business day.</p>
+          </div>
+          <div class="dg-desk-form__grid">
+            <label>Full Name<input name="name" required placeholder="Your name" autocomplete="name" /></label>
+            <label>Email<input type="email" name="email" required placeholder="you@email.com" autocomplete="email" /></label>
+            <label>Phone / WhatsApp<input name="phone" placeholder="+66 XX XXX XXXX" autocomplete="tel" /></label>
+            <label>Topic
+              <select name="topic">
+                <option>General inquiry</option>
+                <option>Travel Services</option>
+                <option>MICE &amp; Events</option>
+                <option>Weddings</option>
+                <option>Partnership</option>
+              </select>
+            </label>
+          </div>
+          <label class="dg-desk-form__full">Message<textarea name="body" rows="5" required placeholder="How can we help?"></textarea></label>
+          <input type="hidden" name="subject" value="Contact Inquiry" />
+          <div class="dg-desk-form__actions">
+            <button type="submit" class="dg-desk-btn dg-desk-btn--primary">Send Message <span aria-hidden="true">→</span></button>
+            <a class="dg-desk-btn dg-desk-btn--ghost" href="../proposal/">Need a full proposal?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</article>
 ${renderPageCta({
   rel: "../",
   variant: "dg-page",
-  title: "Ready to Plan Your Journey?",
+  title: "Ready to plan your journey?",
   text: "Share your brief with our partner desk — we reply with a tailored proposal.",
+  primaryLabel: "Request A Proposal",
+  primaryHref: "proposal/",
+  secondaryLabel: "Back to Home",
+  secondaryHref: "index.html",
 })}`;
-  writePage(
-    path.join(name, "index.html"),
-    wrapPage({ title, description: title, depth, body })
-  );
-  count++;
-}
-
-stubFolder(
-  "contact",
-  "Contact Us",
-  "Call +66 82 147 9553, email dgholidaythailand@gmail.com, or LINE @354ejhoo.",
-  {
-    primaryButton: { label: "Request A Proposal", href: "proposal/" },
-    secondaryButton: { label: "Back to Home", href: "index.html" },
-  }
+writePage(
+  path.join("contact", "index.html"),
+  wrapPage({
+    title: "Contact Us",
+    description: "Contact D&G Holiday Thailand by phone, email, LINE, or WhatsApp.",
+    depth: contactDepth,
+    body: contactBody,
+    extraCss: DESK_CHROME.css,
+    extraScript: revealScript(DESK_CHROME.reveal),
+  })
 );
+count++;
 
+// Articles folder index
 writePage(
   path.join("articles", "index.html"),
   wrapPage({

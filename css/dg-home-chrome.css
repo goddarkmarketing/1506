@@ -243,7 +243,7 @@ input::-webkit-inner-spin-button,input::-webkit-outer-spin-button,input::-webkit
 
 
 /* In-page menu anchors clear sticky header */
-.dg-anchor, #merchandising, #dg-about, #dg-contact, #dg-articles, #dg-destinations, #dg-why, #dg-b2b, #dg-biz-services, #dg-partner-inquiry, #dg-story, #dg-cta-bar {
+.dg-anchor, #merchandising, #dg-about, #dg-contact, #dg-articles, #dg-destinations, #dg-why, #dg-b2b, #dg-biz-services, #dg-partner-inquiry, #dg-story, #dg-cta-bar, #dg-gate-services, #dg-gate-regions, #dg-gate-mice, #dg-gate-trust, #dg-gate-customers, #dg-gate-spotlight, #dg-gate-gallery {
   scroll-margin-top: 120px;
 }
 

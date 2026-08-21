@@ -4,14 +4,14 @@ const path = require("path");
 const indexPath = path.join(__dirname, "..", "index.html");
 let h = fs.readFileSync(indexPath, "utf8");
 
-const slides = Array.from({ length: 8 }, (_, i) => {
+const slides = Array.from({ length: 9 }, (_, i) => {
   const n = String(i + 1).padStart(2, "0");
   const active = i === 0 ? " is-active" : "";
   const eager =
     i === 0
       ? 'loading="eager" fetchpriority="high"'
       : 'loading="lazy"';
-  return `    <img class="dg-hero-slider__slide${active}" src="images/hero/slide-${n}.png?v=3" alt="" ${eager} decoding="async" width="2048" height="768" />`;
+  return `    <img class="dg-hero-slider__slide${active}" src="images/hero/slide-${n}.png?v=4" alt="" ${eager} decoding="async" width="2048" height="768" />`;
 }).join("\n");
 
 const slider = `<div class="css-1dbjc4n r-1pi2tsx r-82yag r-1udh08x r-u8s1d r-13qz1uu dg-hero-slider" aria-hidden="true"><div class="dg-hero-slider__track">

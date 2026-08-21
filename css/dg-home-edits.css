@@ -250,10 +250,12 @@ body {
 #navbar-offset + .r-tqpus0 > .r-1peese0 .dg-hero-search,
 #navbar-offset + .r-tqpus0 > .r-1peese0 .r-pezta,
 #navbar-offset + .r-tqpus0 > .r-1peese0 .r-1wzrnnt,
+#navbar-offset + .r-tqpus0 > .r-1peese0 .r-kdyh1x,
+#navbar-offset + .r-tqpus0 > .r-1peese0 [data-testid^="product-pill-"],
 #navbar-offset + .r-tqpus0 > .r-1peese0 a,
 #navbar-offset + .r-tqpus0 > .r-1peese0 button,
 #navbar-offset + .r-tqpus0 > .r-1peese0 input {
-  pointer-events: auto;
+  pointer-events: auto !important;
 }
 /* Product pills — sit just below hero search */
 #navbar-offset + .r-tqpus0 .r-1wzrnnt.r-pezta {
@@ -286,6 +288,16 @@ body {
   border-radius: 999px !important;
   box-shadow: 0 4px 14px rgba(28, 33, 39, 0.06) !important;
   transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer !important;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* "New!" badge sits absolutely over Land Tours — don't steal clicks */
+#navbar-offset + .r-tqpus0 .dg-new-badge,
+#navbar-offset + .r-tqpus0 .r-1rhk579 {
+  pointer-events: none !important;
 }
 #navbar-offset + .r-tqpus0 [data-testid^="product-pill-"]:hover,
 #navbar-offset + .r-tqpus0 [data-testid^="product-pill-"]:focus-visible {

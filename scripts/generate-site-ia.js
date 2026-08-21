@@ -145,7 +145,7 @@ function chromeCss(depth, extraCss = []) {
 <link rel="stylesheet" href="${rel(depth, "css/dg-chrome.css")}" />
 <link rel="stylesheet" href="${rel(depth, "css/dg-home-edits.css")}?v=ia2" />
 <link rel="stylesheet" href="${rel(depth, "css/dg-ia-pages.css")}?v=13" />
-<link rel="stylesheet" href="${rel(depth, "css/dg-mega-menu.css")}?v=9" />
+<link rel="stylesheet" href="${rel(depth, "css/dg-mega-menu.css")}?v=11" />
 <link rel="stylesheet" href="${rel(depth, "css/dg-page-hero.css")}?v=2" />
 <link rel="stylesheet" href="${rel(depth, "css/dg-internal-system.css")}?v=3" />
 <link rel="stylesheet" href="${rel(depth, "css/dg-mobile.css")}?v=5" />
@@ -471,7 +471,16 @@ function megaInitScript() {
   var backdrop=document.getElementById('dg-mega-backdrop');
   function isMobileNav(){ return window.matchMedia('(max-width: 1100px)').matches; }
 
+  /* Escape sticky/header stacking — fixed sheet must live on body */
+  if(drawer && drawer.parentElement !== document.body){
+    document.body.appendChild(drawer);
+  }
+  if(backdrop && backdrop.parentElement !== document.body){
+    document.body.appendChild(backdrop);
+  }
+
   function closeAllSubs(){
+    if(!drawer) return;
     drawer.querySelectorAll('.dg-mega__item.is-open').forEach(function(n){
       n.classList.remove('is-open');
       var exp=n.querySelector('.dg-mega__expand');
@@ -479,7 +488,7 @@ function megaInitScript() {
     });
   }
 
-  var closeBtn=document.querySelector('.dg-mega__sheet-close');
+  var closeBtn=drawer ? drawer.querySelector('.dg-mega__sheet-close') : null;
   var closeTimer=null;
 
   function setOpen(open){
@@ -525,6 +534,7 @@ function megaInitScript() {
   });
 
   /* Individual accordion toggle — label or chevron */
+  if(drawer){
   document.querySelectorAll('.dg-mega__drawer .dg-mega__item').forEach(function(item){
     var row=item.querySelector(':scope > .dg-mega__row');
     var expand=item.querySelector(':scope > .dg-mega__row > .dg-mega__expand');
@@ -552,6 +562,7 @@ function megaInitScript() {
       toggle(e);
     });
   });
+  }
 
   var header=document.querySelector('.r-bztko3.r-ipm5af.r-fgfhv.r-8ny0jo')
     || document.querySelector('.r-bztko3.r-ipm5af.r-fgfhv');
@@ -631,7 +642,7 @@ if (megaNavOpen >= 0) {
 if (!index.includes("dg-ia-pages.css")) {
   index = index.replace(
     /href="css\/dg-home-edits\.css\?v=[^"]+"/,
-    (m) => `${m} /><link rel="stylesheet" href="css/dg-ia-pages.css?v=13" /><link rel="stylesheet" href="css/dg-mega-menu.css?v=9"`
+    (m) => `${m} /><link rel="stylesheet" href="css/dg-ia-pages.css?v=13" /><link rel="stylesheet" href="css/dg-mega-menu.css?v=11"`
   );
 } else {
   index = index.replace(/dg-ia-pages\.css\?v=\d+/g, "dg-ia-pages.css?v=13");
@@ -639,10 +650,10 @@ if (!index.includes("dg-ia-pages.css")) {
 if (!index.includes("dg-mega-menu.css")) {
   index = index.replace(
     /href="css\/dg-ia-pages\.css\?v=[^"]+"/,
-    (m) => `${m} /><link rel="stylesheet" href="css/dg-mega-menu.css?v=9"`
+    (m) => `${m} /><link rel="stylesheet" href="css/dg-mega-menu.css?v=11"`
   );
 } else {
-  index = index.replace(/dg-mega-menu\.css\?v=\d+/g, "dg-mega-menu.css?v=9");
+  index = index.replace(/dg-mega-menu\.css\?v=\d+/g, "dg-mega-menu.css?v=11");
 }
 
 if (!index.includes("dg-mobile.css")) {

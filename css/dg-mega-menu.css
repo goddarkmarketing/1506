@@ -371,44 +371,69 @@ body.dg-mega-open {
     display: none;
   }
 
-  /* shadcn-style Sheet overlay */
+  /* shadcn-style Sheet overlay — portaled to body, full viewport */
+  body > .dg-mega__backdrop:not([hidden]),
   .dg-mega__backdrop:not([hidden]) {
-    display: block;
-    position: fixed;
-    inset: 0;
-    z-index: 80;
-    background: rgba(0, 0, 0, 0.5);
+    display: block !important;
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: -webkit-fill-available !important;
+    z-index: 2000 !important;
+    background: rgba(0, 0, 0, 0.55) !important;
     opacity: 0;
     transition: opacity 0.28s ease;
+    pointer-events: auto !important;
   }
+  body > .dg-mega__backdrop.is-open,
   .dg-mega__backdrop.is-open {
-    opacity: 1;
+    opacity: 1 !important;
   }
 
-  /* SheetContent — side=right, w-3/4, max-w-sm */
+  /* SheetContent — full viewport height, above dest-band + dock */
+  body > .dg-mega__drawer:not([hidden]),
   .dg-mega__drawer:not([hidden]) {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: auto;
-    width: min(24rem, 86vw);
-    height: 100%;
-    z-index: 90;
-    background: #fff;
+    display: flex !important;
+    flex-direction: column !important;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: auto !important;
+    width: min(24rem, 86vw) !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-height: none !important;
+    min-height: -webkit-fill-available !important;
+    z-index: 2010 !important;
+    background: #fff !important;
     color: var(--dg-mega-ink);
     border-left: 1px solid rgba(11, 46, 89, 0.1);
     box-shadow: -12px 0 40px rgba(11, 31, 51, 0.16);
     padding: 0;
-    overflow: hidden;
+    overflow: hidden !important;
     transform: translateX(100%);
     transition: transform 0.28s cubic-bezier(0.32, 0.72, 0, 1);
-    pointer-events: auto;
+    pointer-events: auto !important;
   }
+  body > .dg-mega__drawer.is-open,
   .dg-mega__drawer.is-open {
-    transform: translateX(0);
+    transform: translateX(0) !important;
+  }
+
+  html.dg-mega-open,
+  body.dg-mega-open {
+    overflow: hidden !important;
+  }
+
+  html.dg-mega-open .dg-dest-band,
+  body.dg-mega-open .dg-dest-band,
+  html.dg-mega-open .dg-cta-dock,
+  body.dg-mega-open .dg-cta-dock {
+    z-index: 0 !important;
+    pointer-events: none !important;
   }
 
   /* SheetHeader */

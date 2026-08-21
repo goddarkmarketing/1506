@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="../../css/dg-chrome.css" />
 <link rel="stylesheet" href="../../css/dg-home-edits.css?v=ia2" />
 <link rel="stylesheet" href="../../css/dg-ia-pages.css?v=13" />
-<link rel="stylesheet" href="../../css/dg-mega-menu.css?v=9" />
+<link rel="stylesheet" href="../../css/dg-mega-menu.css?v=11" />
 <link rel="stylesheet" href="../../css/dg-page-hero.css?v=2" />
 <link rel="stylesheet" href="../../css/dg-internal-system.css?v=3" />
 <link rel="stylesheet" href="../../css/dg-mobile.css?v=5" />
@@ -344,7 +344,16 @@ document.addEventListener("DOMContentLoaded", function () {
   var backdrop=document.getElementById('dg-mega-backdrop');
   function isMobileNav(){ return window.matchMedia('(max-width: 1100px)').matches; }
 
+  /* Escape sticky/header stacking — fixed sheet must live on body */
+  if(drawer && drawer.parentElement !== document.body){
+    document.body.appendChild(drawer);
+  }
+  if(backdrop && backdrop.parentElement !== document.body){
+    document.body.appendChild(backdrop);
+  }
+
   function closeAllSubs(){
+    if(!drawer) return;
     drawer.querySelectorAll('.dg-mega__item.is-open').forEach(function(n){
       n.classList.remove('is-open');
       var exp=n.querySelector('.dg-mega__expand');
@@ -352,7 +361,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  var closeBtn=document.querySelector('.dg-mega__sheet-close');
+  var closeBtn=drawer ? drawer.querySelector('.dg-mega__sheet-close') : null;
   var closeTimer=null;
 
   function setOpen(open){
@@ -398,6 +407,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   /* Individual accordion toggle — label or chevron */
+  if(drawer){
   document.querySelectorAll('.dg-mega__drawer .dg-mega__item').forEach(function(item){
     var row=item.querySelector(':scope > .dg-mega__row');
     var expand=item.querySelector(':scope > .dg-mega__row > .dg-mega__expand');
@@ -425,6 +435,7 @@ document.addEventListener("DOMContentLoaded", function () {
       toggle(e);
     });
   });
+  }
 
   var header=document.querySelector('.r-bztko3.r-ipm5af.r-fgfhv.r-8ny0jo')
     || document.querySelector('.r-bztko3.r-ipm5af.r-fgfhv');

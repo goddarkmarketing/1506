@@ -344,8 +344,9 @@ input::-webkit-inner-spin-button,input::-webkit-outer-spin-button,input::-webkit
   background: none !important;
   -webkit-background-clip: border-box !important;
   background-clip: border-box !important;
-  color: #000000 !important;
-  -webkit-text-fill-color: #000000 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35) !important;
 }
 .dg-hero-search {
   display: flex !important;
@@ -446,9 +447,13 @@ input::-webkit-inner-spin-button,input::-webkit-outer-spin-button,input::-webkit
   0%, 62% { left: -70%; }
   100% { left: 130%; }
 }
-@media (max-width: 720px) {
-  .dg-hero-heading__brand { font-size: 36px !important; }
-  .dg-hero-tagline { font-size: 20px !important; }
+@media (max-width: 767px) {
+  .dg-hero-heading__brand { font-size: clamp(24px, 7.2vw, 30px) !important; }
+  .dg-hero-tagline {
+    font-size: clamp(14px, 4vw, 17px) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
 }
 </style>
 <style id="dg-stable-fixes">
@@ -3598,7 +3603,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /* Hide absolute product shortcut row if it escapes hero (common Traveloka pattern) */
 .r-1d2f490.r-u8s1d.r-ipm5af {
   max-height: 100%;
-}</style><link rel="stylesheet" href="css/dg-chrome.css" /><link rel="stylesheet" href="css/dg-home-edits.css?v=band79" /><link rel="stylesheet" href="css/dg-home-gateways.css?v=13" /><link rel="stylesheet" href="css/dg-ia-pages.css?v=13" /><link rel="stylesheet" href="css/dg-mega-menu.css?v=9" /><link rel="stylesheet" href="css/dg-destinations.css?v=32" /><link rel="stylesheet" href="css/dg-mobile.css?v=5" /></head><body><div id="__next"><div class="css-1dbjc4n r-13awgt0"><span></span><div class="css-1dbjc4n r-bztko3 r-ipm5af r-fgfhv r-13qz1uu r-8ny0jo" style="position:sticky"><div class="css-1dbjc4n r-1awozwy r-1777fci r-u8s1d r-ipm5af r-13qz1uu"><div class="css-1dbjc4n r-82yag"></div></div><div class="css-1dbjc4n r-wy61xf r-1jgb5lz r-r0h9e2 r-u8s1d r-13qz1uu r-184en5c" style="background-image:linear-gradient(3.141592653589793rad,rgba(3, 18, 26, 0.325) 50%,rgba(3, 18, 26, 0) 100%)"><div class="css-1dbjc4n r-1awozwy r-1777fci r-adacv r-82yag r-u8s1d r-fgfhv r-13qz1uu r-184en5c" style="background-color:rgba(0,0,0,0.00)"><div class="css-1dbjc4n r-18u37iz r-1wtj0ep r-xd6kpl r-1e081e0 r-95jzfe r-17yavnb r-184en5c"><div class="css-1dbjc4n r-1awozwy r-18u37iz"><a href="index.html" class="css-4rbku5 dg-brand-link" aria-label="D&amp;G Holiday"><span class="dg-brand-logo dg-brand-logo--header"><img class="dg-brand-logo__img" src="images/dg-logo.png?v=10" alt="D&amp;G Holiday (Thailand) Co., Ltd." width="180" height="48" decoding="async" /><span class="dg-brand-logo__text">D&amp;G Holiday</span></span></a></div><nav class="dg-mega dg-top-menu" aria-label="Primary">
+}</style><link rel="stylesheet" href="css/dg-chrome.css" /><link rel="stylesheet" href="css/dg-home-edits.css?v=band85" /><link rel="stylesheet" href="css/dg-home-gateways.css?v=13" /><link rel="stylesheet" href="css/dg-ia-pages.css?v=13" /><link rel="stylesheet" href="css/dg-mega-menu.css?v=11" /><link rel="stylesheet" href="css/dg-destinations.css?v=32" /><link rel="stylesheet" href="css/dg-mobile.css?v=5" /></head><body><div id="__next"><div class="css-1dbjc4n r-13awgt0"><span></span><div class="css-1dbjc4n r-bztko3 r-ipm5af r-fgfhv r-13qz1uu r-8ny0jo" style="position:sticky"><div class="css-1dbjc4n r-1awozwy r-1777fci r-u8s1d r-ipm5af r-13qz1uu"><div class="css-1dbjc4n r-82yag"></div></div><div class="css-1dbjc4n r-wy61xf r-1jgb5lz r-r0h9e2 r-u8s1d r-13qz1uu r-184en5c" style="background-image:linear-gradient(3.141592653589793rad,rgba(3, 18, 26, 0.325) 50%,rgba(3, 18, 26, 0) 100%)"><div class="css-1dbjc4n r-1awozwy r-1777fci r-adacv r-82yag r-u8s1d r-fgfhv r-13qz1uu r-184en5c" style="background-color:rgba(0,0,0,0.00)"><div class="css-1dbjc4n r-18u37iz r-1wtj0ep r-xd6kpl r-1e081e0 r-95jzfe r-17yavnb r-184en5c"><div class="css-1dbjc4n r-1awozwy r-18u37iz"><a href="index.html" class="css-4rbku5 dg-brand-link" aria-label="D&amp;G Holiday"><span class="dg-brand-logo dg-brand-logo--header"><img class="dg-brand-logo__img" src="images/dg-logo.png?v=10" alt="D&amp;G Holiday (Thailand) Co., Ltd." width="180" height="48" decoding="async" /><span class="dg-brand-logo__text">D&amp;G Holiday</span></span></a></div><nav class="dg-mega dg-top-menu" aria-label="Primary">
 <button type="button" class="dg-mega__toggle" aria-expanded="false" aria-controls="dg-mega-drawer">Menu</button>
 <div class="dg-mega__desktop dg-top-menu__desktop"><a class="dg-mega__link" href="index.html">Home</a>
 <div class="dg-mega__item">
@@ -3746,7 +3751,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <span class="dg-marquee__item">D&amp;G Holiday (Thailand) Co., Ltd. — B2B travel partner in Thailand | Group Tours | FIT Tours | Events | Visa Services</span>
     <span class="dg-marquee__item" aria-hidden="true">D&amp;G Holiday (Thailand) Co., Ltd. — B2B travel partner in Thailand | Group Tours | FIT Tours | Events | Visa Services</span>
   </div>
-</div></div></div></div></div></div><div class="css-1dbjc4n" style="height:0px" id="navbar-offset"></div><div class="css-1dbjc4n r-6koalj r-1wtj0ep r-bnwqim r-13qz1uu r-tqpus0" style="background-color:rgba(28,41,48,1.00)"><div class="css-1dbjc4n r-1pi2tsx r-82yag r-1udh08x r-u8s1d r-13qz1uu"><img loading="eager" importance="high" decoding="async" width="100%" height="100%" class="r-13t5eql r-417010 dg-hero-bg" src="images/dg-hero-egypt.png?v=hero20260728b" alt="" style="object-fit:cover;object-position:center center;width:100%;height:100%"></div><div class="css-1dbjc4n r-1peese0 r-1jgb5lz r-17yavnb" style="margin-top:144px;z-index:auto"><div class="css-1dbjc4n r-bnwqim" style="z-index:auto"><div class="css-1dbjc4n r-1awozwy r-6koalj r-1fz3rvf dg-hero-title">
+</div></div></div></div></div></div><div class="css-1dbjc4n" style="height:0px" id="navbar-offset"></div><div class="css-1dbjc4n r-6koalj r-1wtj0ep r-bnwqim r-13qz1uu r-tqpus0" style="background-color:rgba(28,41,48,1.00)"><div class="css-1dbjc4n r-1pi2tsx r-82yag r-1udh08x r-u8s1d r-13qz1uu"><img loading="eager" importance="high" decoding="async" width="100%" height="100%" class="r-13t5eql r-417010 dg-hero-bg" src="images/dg-hero.jpg?v=hero20260821c" alt="" style="object-fit:contain;object-position:center center;width:100%;height:100%" width="2560" height="1095"></div><div class="css-1dbjc4n r-1peese0 r-1jgb5lz r-17yavnb" style="margin-top:144px;z-index:auto"><div class="css-1dbjc4n r-bnwqim" style="z-index:auto"><div class="css-1dbjc4n r-1awozwy r-6koalj r-1fz3rvf dg-hero-title">
   <h1 class="dg-hero-heading" aria-level="1" role="heading">
     <span class="dg-hero-heading__brand">D&amp;G HOLIDAY</span>
   </h1>
@@ -4703,7 +4708,16 @@ document.addEventListener("DOMContentLoaded", function () {
   var backdrop=document.getElementById('dg-mega-backdrop');
   function isMobileNav(){ return window.matchMedia('(max-width: 1100px)').matches; }
 
+  /* Escape sticky/header stacking — fixed sheet must live on body */
+  if(drawer && drawer.parentElement !== document.body){
+    document.body.appendChild(drawer);
+  }
+  if(backdrop && backdrop.parentElement !== document.body){
+    document.body.appendChild(backdrop);
+  }
+
   function closeAllSubs(){
+    if(!drawer) return;
     drawer.querySelectorAll('.dg-mega__item.is-open').forEach(function(n){
       n.classList.remove('is-open');
       var exp=n.querySelector('.dg-mega__expand');
@@ -4711,7 +4725,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  var closeBtn=document.querySelector('.dg-mega__sheet-close');
+  var closeBtn=drawer ? drawer.querySelector('.dg-mega__sheet-close') : null;
   var closeTimer=null;
 
   function setOpen(open){
@@ -4757,6 +4771,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   /* Individual accordion toggle — label or chevron */
+  if(drawer){
   document.querySelectorAll('.dg-mega__drawer .dg-mega__item').forEach(function(item){
     var row=item.querySelector(':scope > .dg-mega__row');
     var expand=item.querySelector(':scope > .dg-mega__row > .dg-mega__expand');
@@ -4784,6 +4799,7 @@ document.addEventListener("DOMContentLoaded", function () {
       toggle(e);
     });
   });
+  }
 
   var header=document.querySelector('.r-bztko3.r-ipm5af.r-fgfhv.r-8ny0jo')
     || document.querySelector('.r-bztko3.r-ipm5af.r-fgfhv');

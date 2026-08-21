@@ -14,10 +14,12 @@
   --dg-dest-band-pull: 0px; /* flush seam — dest-band sits on hero bottom */
   --dg-dest-band-overlap: 0px;
   --dg-hero-gap: 16px;
-  --dg-hero-h: 664px; /* hero bottom meets .dg-dest-band top */
-  --dg-hero-min-h: var(--dg-hero-h);
-  --dg-hero-img-pos: center 70%;
-  --dg-hero-bottom-fade-h: 9%;
+  /* Montage aspect 1024×438 — height follows width so image is never cropped */
+  --dg-hero-aspect: 1024 / 438;
+  --dg-hero-h: auto;
+  --dg-hero-min-h: 0;
+  --dg-hero-img-pos: center center;
+  --dg-hero-bottom-fade-h: 6%;
 }
 
 /* Kill page-level horizontal scrollbar (100vw / breakout leftovers) */
@@ -81,14 +83,15 @@ body {
   z-index: 10 !important;
   display: flex !important;
   flex-direction: column !important;
-  min-height: var(--dg-hero-h) !important;
-  height: var(--dg-hero-h) !important;
-  max-height: var(--dg-hero-h) !important;
   width: 100% !important;
   max-width: none !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
-  background-color: transparent !important;
+  aspect-ratio: var(--dg-hero-aspect);
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  background-color: #1c2930 !important;
   overflow: hidden !important;
   padding-bottom: 0 !important;
 }
@@ -118,14 +121,16 @@ body {
   left: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  min-width: 100% !important;
-  min-height: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
   max-width: none !important;
   max-height: none !important;
   filter: none !important;
   -webkit-filter: none !important;
-  object-fit: cover !important;
+  object-fit: contain !important;
   object-position: var(--dg-hero-img-pos) !important;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
   opacity: 1 !important;
   z-index: 0 !important;
 }
@@ -190,10 +195,8 @@ body {
   inset: 0;
   z-index: 2;
   pointer-events: none;
-  /* Center bright wash for hero copy — lighter bottom so cloud fade reads smaller */
-  background:
-    radial-gradient(ellipse 70% 55% at 50% 38%, rgba(255, 255, 255, 0.55) 0%, transparent 72%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, transparent 35%, transparent 88%, rgba(255, 200, 120, 0.03) 100%);
+  /* Soft black overlay — keeps montage readable under white copy */
+  background: rgba(0, 0, 0, 0.32);
 }
 /* Kill section-level overlay if any old rule remains */
 #navbar-offset + .r-tqpus0::before {
@@ -215,13 +218,14 @@ body {
   min-width: 0 !important;
   width: 100% !important;
 }
-/* Hero content overlay — centered in zone below header, above dest-band */
+/* Hero content — vertically centered as one cluster (equal top/bottom space) */
 #navbar-offset + .r-tqpus0 > .r-1peese0.r-17yavnb,
 #navbar-offset + .r-tqpus0 > .r-1peese0 {
   position: absolute !important;
-  top: var(--dg-header-stack) !important;
+  inset: 0 !important;
+  top: 0 !important;
   right: 0 !important;
-  bottom: var(--dg-dest-band-pull) !important;
+  bottom: 0 !important;
   left: 0 !important;
   z-index: 5 !important;
   display: flex !important;
@@ -233,9 +237,9 @@ body {
   margin: 0 !important;
   box-sizing: border-box !important;
   min-height: 0 !important;
-  height: auto !important;
-  padding: 0 14px !important;
-  gap: 12px !important;
+  height: 100% !important;
+  padding: clamp(16px, 3.5vh, 28px) 14px !important;
+  gap: clamp(14px, 2.2vh, 22px) !important;
   overflow: visible !important;
   pointer-events: none;
 }
@@ -408,8 +412,9 @@ body {
   background: none;
   -webkit-background-clip: border-box;
   background-clip: border-box;
-  color: #000000;
-  -webkit-text-fill-color: #000000;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
 }
 .dg-hero-search {
   display: flex;
@@ -525,21 +530,120 @@ body {
 .dg-hero-ctas,
 .dg-hero-cats { display: none !important; }
 
-@media (max-width: 720px) {
+@media (max-width: 767px) {
   :root {
-    --dg-header-h: 64px;
+    --dg-header-h: 56px;
     --dg-header-extra: 32px;
-    --dg-hero-h: 580px;
-    --dg-hero-img-pos: center 74%;
+    --dg-hero-img-pos: center 42%;
     --dg-hero-bottom-fade-h: 8%;
-    --dg-hero-gap: 12px;
+    --dg-hero-gap: 10px;
   }
-  .dg-hero-heading__brand { font-size: 36px !important; }
-  .dg-hero-tagline { font-size: 20px; }
+
+  /* Tall enough for title + search + pills; image covers the box */
+  #__next > .css-1dbjc4n.r-13awgt0 > .r-tqpus0,
+  #navbar-offset + .r-tqpus0,
+  .css-1dbjc4n.r-6koalj.r-1wtj0ep.r-bnwqim.r-13qz1uu.r-tqpus0 {
+    aspect-ratio: auto !important;
+    min-height: min(78svh, 560px) !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: hidden !important;
+  }
+
+  #navbar-offset + .r-tqpus0 > .r-1pi2tsx.r-82yag img,
+  #navbar-offset + .r-tqpus0 > .r-1pi2tsx.r-82yag img.dg-hero-bg {
+    object-fit: cover !important;
+    object-position: var(--dg-hero-img-pos) !important;
+  }
+
+  #navbar-offset + .r-tqpus0 > .r-1peese0.r-17yavnb,
   #navbar-offset + .r-tqpus0 > .r-1peese0 {
-    gap: 10px !important;
-    padding-left: 12px !important;
-    padding-right: 12px !important;
+    gap: 12px !important;
+    padding: 18px 12px 22px !important;
+    justify-content: center !important;
+    overflow: visible !important;
+  }
+
+  .dg-hero-title {
+    gap: 8px !important;
+    padding: 0 4px !important;
+    max-width: 100% !important;
+  }
+
+  .dg-hero-heading__brand {
+    font-size: clamp(24px, 7.2vw, 30px) !important;
+    line-height: 1.15 !important;
+  }
+
+  .dg-hero-tagline {
+    font-size: clamp(14px, 4vw, 17px) !important;
+    margin: 0 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+
+  .dg-hero-search {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 5px 5px 5px 14px !important;
+  }
+
+  .dg-hero-search__field input {
+    font-size: 14px !important;
+  }
+
+  #navbar-offset + .r-tqpus0 .r-1wzrnnt.r-pezta,
+  #navbar-offset + .r-tqpus0 > .r-1peese0 > .r-pezta,
+  #navbar-offset + .r-tqpus0 > .r-1peese0 > .r-1wzrnnt {
+    max-width: 100% !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  #navbar-offset + .r-tqpus0 .r-kdyh1x {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+  }
+
+  /* 2-column pill grid — no horizontal overflow */
+  #navbar-offset + .r-tqpus0 .r-6koalj.r-18u37iz.r-9aw3ui {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    row-gap: 8px !important;
+    column-gap: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    flex-wrap: unset !important;
+  }
+
+  #navbar-offset + .r-tqpus0 .r-6koalj.r-18u37iz.r-9aw3ui > .css-1dbjc4n {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex: none !important;
+  }
+
+  #navbar-offset + .r-tqpus0 [data-testid^="product-pill-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: 40px !important;
+    box-sizing: border-box !important;
+    justify-content: center !important;
+    padding: 8px 10px !important;
+    border-radius: 12px !important;
+  }
+
+  #navbar-offset + .r-tqpus0 [data-testid^="product-pill-"] .css-901oao {
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
   }
 }
 

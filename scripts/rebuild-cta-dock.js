@@ -96,7 +96,7 @@ for (const file of walk(ROOT)) {
     html = html.replace("</body>", `<script src="${prefix}js/dg-cta-dock.js" defer></script>\n</body>`);
   }
   html = html.replace(/dg-mobile\.css\?v=\d+/g, "dg-mobile.css?v=7");
-  fs.writeFileSync(file, html);
+  fs.writeFileSync(file, html, "utf8");
   changed++;
 }
 console.log("done", changed);

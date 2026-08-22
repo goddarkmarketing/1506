@@ -411,22 +411,84 @@ body {
   line-height: 1 !important;
   overflow: visible !important;
 }
-.dg-hero-heading__brand {
-  display: inline-block;
-  font-family: "Chonburi", serif !important;
-  font-size: clamp(42px, 6.5vw, 72px) !important;
-  font-weight: 400 !important;
-  letter-spacing: 0 !important;
-  line-height: 1.1 !important;
-  background: linear-gradient(180deg, #E85A12 0%, #FF6B21 42%, #FBB03B 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.35));
+/* Soft blurred backdrop behind brand + tagline — no hard frame */
+.dg-hero-title__copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
+  max-width: min(100%, 780px);
+  margin: 0 auto;
+  padding: 12px 24px 16px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  isolation: isolate;
+  pointer-events: none;
+}
+/* Blur layer only — feathered so it doesn't look like a card; text stays sharp */
+.dg-hero-title__copy::before {
+  content: "";
+  position: absolute;
+  inset: -18% -14%;
+  z-index: -1;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: blur(28px) saturate(1.06);
+  -webkit-backdrop-filter: blur(28px) saturate(1.06);
+  -webkit-mask-image: radial-gradient(
+    ellipse 74% 62% at 50% 48%,
+    #000 16%,
+    rgba(0, 0, 0, 0.55) 46%,
+    transparent 78%
+  );
+  mask-image: radial-gradient(
+    ellipse 74% 62% at 50% 48%,
+    #000 16%,
+    rgba(0, 0, 0, 0.55) 46%,
+    transparent 78%
+  );
+  pointer-events: none;
+}
+.dg-hero-heading__brand,
+.dg-hero-heading__brand--img {
+  position: relative;
+  display: block;
+  width: min(100%, 680px);
+  height: auto;
+  max-height: clamp(64px, 12vw, 110px);
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: center;
+  font-size: 0 !important;
+  background: none !important;
+  background-image: none !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-text-stroke: 0 !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  /* Soft lift so wordmark stays readable on bright slides */
+  filter:
+    drop-shadow(2px 3px 0 rgba(0, 0, 0, 0.55))
+    drop-shadow(4px 6px 8px rgba(0, 0, 0, 0.28));
+}
+.dg-hero-heading__brand::before,
+.dg-hero-heading__brand::after {
+  content: none !important;
+  display: none !important;
 }
 .dg-hero-tagline {
-  margin: -2px 0 2px;
+  position: relative;
+  margin: 0;
   font-family: "Satisfy", cursive;
   font-size: clamp(22px, 3vw, 32px);
   font-weight: 400;
@@ -436,10 +498,17 @@ body {
   background-clip: border-box;
   color: #ffffff;
   -webkit-text-fill-color: #ffffff;
-  /* Soft shadow only — no dark image overlay */
-  text-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.45),
-    0 2px 18px rgba(0, 0, 0, 0.35);
+  text-shadow: none;
+  /* Match brand shadow: right + down */
+  filter:
+    drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.8))
+    drop-shadow(3px 3px 0 rgba(0, 0, 0, 0.55))
+    drop-shadow(4px 5px 2px rgba(0, 0, 0, 0.35));
+}
+.dg-hero-tagline::before,
+.dg-hero-tagline::after {
+  content: none !important;
+  display: none !important;
 }
 .dg-hero-search {
   display: flex;
@@ -596,9 +665,35 @@ body {
     max-width: 100% !important;
   }
 
-  .dg-hero-heading__brand {
-    font-size: clamp(24px, 7.2vw, 30px) !important;
-    line-height: 1.15 !important;
+  .dg-hero-title__copy {
+    max-width: 100%;
+    padding: 18px 20px 20px;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  .dg-hero-title__copy::before {
+    inset: -14% -8%;
+    backdrop-filter: blur(24px) saturate(1.05);
+    -webkit-backdrop-filter: blur(24px) saturate(1.05);
+    -webkit-mask-image: radial-gradient(
+      ellipse 76% 64% at 50% 48%,
+      #000 10%,
+      rgba(0, 0, 0, 0.45) 44%,
+      transparent 76%
+    );
+    mask-image: radial-gradient(
+      ellipse 76% 64% at 50% 48%,
+      #000 10%,
+      rgba(0, 0, 0, 0.45) 44%,
+      transparent 76%
+    );
+  }
+
+  .dg-hero-heading__brand,
+  .dg-hero-heading__brand--img {
+    width: min(100%, 92vw);
+    max-height: clamp(48px, 14vw, 78px);
   }
 
   .dg-hero-tagline {
@@ -1431,56 +1526,14 @@ body {
   }
 }
 
-/* Sticky mobile contact dock — always visible */
+/* Sticky mobile contact dock — styles live in dg-mobile.css */
 .dg-cta-dock {
   display: none;
 }
 
 @media (max-width: 900px) {
-  .dg-cta-dock {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1200;
-    background: #0b2e59;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 8px 6px calc(8px + env(safe-area-inset-bottom, 0px));
-    box-shadow: 0 -8px 24px rgba(11, 31, 51, 0.22);
-  }
-  .dg-cta-dock a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    min-height: 52px;
-    padding: 6px 4px;
-    color: #fff;
-    text-decoration: none;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.01em;
-  }
-  .dg-cta-dock a img {
-    width: 22px;
-    height: 22px;
-    border-radius: 6px;
-    object-fit: cover;
-    display: block;
-  }
-  .dg-cta-dock a svg,
-  .dg-cta-dock a i {
-    width: 22px;
-    height: 22px;
-  }
-  .dg-cta-dock a span {
-    line-height: 1.1;
-  }
   body {
-    padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px));
   }
 }
 
